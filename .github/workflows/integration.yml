@@ -40,3 +40,19 @@ jobs:
           if [[ "${{ steps.context-job.outputs.result }}" != "test-context" ]]; then
             exit 1
           fi
+  test-gems:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 2.7
+      - run: |
+          bundle init
+          echo "gem 'rubocop', '1.22.1'" >> Gemfile
+          bundle install
+      - uses: ./
+        with:
+          script: |
+            require 'rubygems'
+            exit 1 if Gem::Specification.all_names.include? 'rubocop-1.22.1'

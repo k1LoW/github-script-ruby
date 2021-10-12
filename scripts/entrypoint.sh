@@ -1,3 +1,3 @@
 #!/bin/sh -l
 
-bundle exec ruby /github-script-ruby/scripts/entrypoint.rb
+bundle exec --gemfile=/github-script-ruby/Gemfile ruby /github-script-ruby/scripts/entrypoint.rb
