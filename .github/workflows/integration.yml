@@ -40,6 +40,7 @@ jobs:
         with:
           ruby-version: 2.7
       - run: |
+          rm -f Gemfile Gemfile.lock
           bundle init
           echo "gem 'rubocop', '1.22.1'" >> Gemfile
           bundle install

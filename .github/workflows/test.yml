@@ -9,5 +9,8 @@ jobs:
     container: ghcr.io/k1low/github-script-ruby-base:latest
     steps:
       - uses: actions/checkout@v2
-      - run: |
-          ruby test/run_test.rb
+      - name: Setup
+        run: bundle install
+      - name: Run test
+        run: bundle exec ruby test/run_test.rb
+      - uses: k1LoW/octocov-action@v0
