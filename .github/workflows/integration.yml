@@ -1,0 +1,42 @@
+name: Integration
+
+on:
+  push:
+
+jobs:
+  test-return:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - id: output-set
+        uses: ./
+        with:
+          script: core.get_input('input')
+          result-encoding: string
+          input: hello world
+      - run: |
+          if [[ "${{ steps.output-set.outputs.result }}" != "hello world" ]]; then
+            exit 1
+          fi
+  test-context:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - id: context-payload
+        uses: ./
+        with:
+          script: context.payload.repository.default_branch
+          result-encoding: string
+      - run: |
+          if [[ "${{ steps.context-payload.outputs.result }}" != "main" ]]; then
+            exit 1
+          fi
+      - id: context-job
+        uses: ./
+        with:
+          script: context.job
+          result-encoding: string
+      - run: |
+          if [[ "${{ steps.context-job.outputs.result }}" != "test-context" ]]; then
+            exit 1
+          fi

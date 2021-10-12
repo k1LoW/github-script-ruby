@@ -1,0 +1,13 @@
+name: Test
+
+on:
+  push:
+
+jobs:
+  test-return:
+    runs-on: ubuntu-latest
+    container: ghcr.io/k1low/github-script-ruby-base:latest
+    steps:
+      - uses: actions/checkout@v2
+      - run: |
+          ruby test/run_test.rb

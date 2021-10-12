@@ -1,0 +1,16 @@
+name: Example (Comment on an issue)
+on:
+  issues:
+    types: [opened]
+
+jobs:
+  comment:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: k1LoW/github-script-ruby@main
+        with:
+          script: |
+            repo = "#{context.repo.owner}/#{context.repo.repo}"
+            number = context.issue.number
+            comment = '👋 Thanks for reporting!'
+            github.add_comment(repo, number, comment)

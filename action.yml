@@ -1,0 +1,30 @@
+name: GitHub Script for Ruby
+description: Run simple ruby scripts using the GitHub client
+branding:
+  color: red
+  icon: code
+inputs:
+  script:
+    description: The script to run
+    required: true
+  github-token:
+    description: The GitHub token used to create an authenticated client
+    default: ${{ github.token }}
+    required: false
+  debug:
+    description: Whether to tell the GitHub client to log details of its requests
+    default: false
+  result-encoding:
+    description: Either "string" or "json" (default "json")—how the result will be encoded
+    default: json
+outputs:
+  result:
+    description: The return value of the script, stringified with `JSON.#generate`
+runs:
+  using: docker
+  image: Dockerfile
+  env:
+    GITHUB_TOKEN: ${{ inputs.github-token }}
+    # Ruby can get environment variables with hyphenated names,
+    # but it cannot get environment variables with hyphenated names via docker command
+    INPUT_RESULT_ENCODING: ${{ inputs.result-encoding }}

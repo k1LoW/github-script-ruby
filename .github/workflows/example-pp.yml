@@ -1,0 +1,13 @@
+name: Example (Print the available attributes of context)
+
+on:
+  push:
+
+jobs:
+  pp-context:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: k1LoW/github-script-ruby@main
+        with:
+          script: |
+            pp context
