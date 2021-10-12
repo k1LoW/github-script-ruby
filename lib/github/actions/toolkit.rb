@@ -1,4 +1,4 @@
 # frozen_string_literal: true
 
-require "#{__dir__}/toolkit/core"
-require "#{__dir__}/toolkit/runner"
+require_relative 'toolkit/core'
+require_relative 'toolkit/runner'

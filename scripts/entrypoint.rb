@@ -4,7 +4,7 @@ require 'erb'
 require 'json'
 require 'tempfile'
 require 'open3'
-require "#{__dir__}/../lib/github/actions/toolkit"
+require_relative '../lib/github/actions/toolkit'
 
 core = GitHub::Actions::Toolkit::Core.new
 script = core.get_input('script')

@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 require 'test/unit'
-require "#{__dir__}/../lib/github/actions/toolkit"
+require_relative "../lib/github/actions/toolkit"
 
 class TestCore < Test::Unit::TestCase
   def test_get_input
