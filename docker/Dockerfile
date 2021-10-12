@@ -5,7 +5,7 @@ LABEL org.opencontainers.image.source="https://github.com/k1LoW/github-script-ru
 
 RUN echo '#! /bin/sh' > /usr/bin/mesg && chmod 755 /usr/bin/mesg
 
-COPY baseimage/Gemfile Gemfile
+COPY docker/Gemfile Gemfile
 COPY lib/ /github-script-ruby/lib/
 COPY scripts/entrypoint.rb /github-script-ruby/scripts/entrypoint.rb
 COPY scripts/entrypoint.sh /github-script-ruby/scripts/entrypoint.sh

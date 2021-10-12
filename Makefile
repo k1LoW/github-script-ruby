@@ -1,5 +1,5 @@
 build-base:
-	docker build -f baseimage/Dockerfile . -t ghcr.io/k1low/github-script-ruby-base:latest
+	docker build -f docker/Dockerfile . -t ghcr.io/k1low/github-script-ruby-base:latest
 
 push-base: build-base
 	docker push ghcr.io/k1low/github-script-ruby-base:latest
@@ -11,8 +11,8 @@ prerelease:
 	git add CHANGELOG.md Dockerfile
 	git commit -m'Bump up version number'
 	git tag ${VER}
-	docker build -f baseimage/Dockerfile . -t ghcr.io/k1low/github-script-ruby-base:${VER}
-	docker build -f baseimage/Dockerfile . -t ghcr.io/k1low/github-script-ruby-base:latest
+	docker build -f docker/Dockerfile . -t ghcr.io/k1low/github-script-ruby-base:${VER}
+	docker build -f docker/Dockerfile . -t ghcr.io/k1low/github-script-ruby-base:latest
 
 release:
 	docker push ghcr.io/k1low/github-script-ruby-base:${VER}
