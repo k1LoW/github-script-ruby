@@ -6,6 +6,8 @@ test_dir = File.join(base_dir, 'test')
 
 $LOAD_PATH.unshift(lib_dir)
 
+require 'simplecov'
 require 'test/unit'
+SimpleCov.start
 
 exit Test::Unit::AutoRunner.run(true, test_dir)
