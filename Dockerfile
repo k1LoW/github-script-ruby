@@ -1,4 +1,4 @@
-FROM ghcr.io/k1low/github-script-ruby-base:v0.2.0
+FROM ghcr.io/k1low/github-script-ruby-base:v0.2.1
 
 COPY docker/Gemfile /github-script-ruby/Gemfile
 COPY lib/ /github-script-ruby/lib/
