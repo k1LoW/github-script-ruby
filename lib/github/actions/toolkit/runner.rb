@@ -45,7 +45,7 @@ module GitHub
           if ENV['GITHUB_REPOSITORY']
             owner, repo = ENV['GITHUB_REPOSITORY'].split('/')
             @context.repo = OpenStruct.new({ owner: owner, repo: repo })
-          elsif payload&.repository
+          elsif @context.payload&.repository
             @context.repo = OpenStruct.new({ owner: payload.repository.owner.login, repo: payload.repository.name })
           end
 
