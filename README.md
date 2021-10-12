@@ -16,7 +16,7 @@ ref: [actions/github-script example](https://github.com/actions/github-script#pr
 
 ``` yaml
 - name: View context attributes
-  uses: k1LoW/github-script-ruby@main
+  uses: k1LoW/github-script-ruby@v0
   with:
     script: pp context
 ```
@@ -33,7 +33,7 @@ jobs:
   comment:
     runs-on: ubuntu-latest
     steps:
-      - uses: k1LoW/github-script-ruby@main
+      - uses: k1LoW/github-script-ruby@v0
         with:
           script: |
             repo = "#{context.repo.owner}/#{context.repo.repo}"
