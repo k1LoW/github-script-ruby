@@ -25,21 +25,13 @@ jobs:
       - id: context-payload
         uses: ./
         with:
-          script: context.payload.repository.default_branch
-          result-encoding: string
-      - run: |
-          if [[ "${{ steps.context-payload.outputs.result }}" != "main" ]]; then
-            exit 1
-          fi
+          script: |
+            exit 1 unless context.payload.repository.default_branch == 'main'
       - id: context-job
         uses: ./
         with:
-          script: context.job
-          result-encoding: string
-      - run: |
-          if [[ "${{ steps.context-job.outputs.result }}" != "test-context" ]]; then
-            exit 1
-          fi
+          script: |
+            exit 1 unless context.job == 'test-context'
   test-gems:
     runs-on: ubuntu-latest
     steps:

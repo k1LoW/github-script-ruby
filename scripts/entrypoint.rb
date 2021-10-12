@@ -22,7 +22,7 @@ Tempfile.create do |f|
   print o
 end
 
-exit status
+exit 1 unless status.zero?
 __END__
 # frozen_string_literal: true
 
