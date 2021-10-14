@@ -4,7 +4,7 @@ on:
   push:
 
 jobs:
-  test-return:
+  test:
     runs-on: ubuntu-latest
     container: ghcr.io/k1low/github-script-ruby-base:latest
     steps:
