@@ -62,7 +62,29 @@ jobs:
           script: |
             require 'rubygems'
             exit 1 unless Gem::Specification.all_names.include? 'rubocop-1.22.1'
-            exit 1 if Gem::Specification.all_names.include? octokit-4.20.0'
+            exit 1 if Gem::Specification.all_names.include? 'octokit-4.20.0'
           gemfile: |
             source 'https://rubygems.org'
             gem 'rubocop', '1.22.1'
+
+  test-slack-tmp:
+    name: 'Post message to Slack #general channel'
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: 'Post message to Slack #general channel'
+      uses: ./
+      with:
+        script: |
+          require 'slack-ruby-client'
+          Slack.configure do |config|
+            config.token = ENV['SLACK_API_TOKEN']
+          end
+          client = Slack::Web::Client.new
+          client.chat_postMessage(channel: '#random', text: 'Hello, Slack bot!')
+        gemfile: |
+          source 'https://rubygems.org'
+          gem 'octokit', '~> 4.0'
+          gem 'slack-ruby-client'
+      env:
+        SLACK_API_TOKEN: ${{ secrets.SLACK_API_TOKEN }}

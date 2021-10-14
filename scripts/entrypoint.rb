@@ -14,12 +14,6 @@ gemfile_path = '/github-script-ruby/Gemfile'
 unless gemfile.empty?
   status = 1
   gemfile_path = '/tmp/Gemfile'
-  File.write('/tmp/Gemfile', gemfile)
-  o, e, s = Open3.capture3(ENV.to_hash, "bundle install --gemfile=#{gemfile_path}", chdir: '/tmp/')
-  core.error(e) unless e == ''
-  status = s.to_i
-  print o
-  exit 1 unless status.zero?
 end
 
 status = 1

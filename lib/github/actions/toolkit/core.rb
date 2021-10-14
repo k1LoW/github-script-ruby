@@ -9,18 +9,18 @@ module GitHub
         end
 
         def set_output(name, value)
-          puts make_outout(name, value)
+          puts make_output(name, value)
         end
 
         def error(message)
           puts "::error ::#{escape_data(message)}"
         end
 
-        private
-
-        def make_outout(name, value)
+        def make_output(name, value)
           "::set-output name=#{escape_property(name)}::#{escape_data(value)}"
         end
+
+        private
 
         def escape_property(prop)
           prop&.gsub(/%/, '%25')&.gsub(/\r/, '%0D')&.gsub(/\n/, '%0A')&.gsub(/:/, '%3A')&.gsub(/,/, '%2C') || ''
