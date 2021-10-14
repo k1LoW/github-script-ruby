@@ -5,6 +5,7 @@ on:
 
 jobs:
   test-return:
+    name: 'The return value of `script` can be retrieved'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -19,6 +20,7 @@ jobs:
             exit 1
           fi
   test-context:
+    name: 'Can get values from `context`'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -33,6 +35,7 @@ jobs:
           script: |
             exit 1 unless context.job == 'test-context'
   test-gems:
+    name: 'Not affected by gems in other steps'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -49,3 +52,16 @@ jobs:
           script: |
             require 'rubygems'
             exit 1 if Gem::Specification.all_names.include? 'rubocop-1.22.1'
+  test-gemfile:
+    name: 'Can change Gemfile to use'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: ./
+        with:
+          script: |
+            require 'rubygems'
+            exit 1 unless Gem::Specification.all_names.include? 'rubocop-1.22.1'
+          gemfile: |
+            source 'https://rubygems.org'
+            gem 'rubocop', '1.22.1'
