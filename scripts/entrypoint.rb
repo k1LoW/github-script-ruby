@@ -11,7 +11,7 @@ script = core.get_input('script')
 gemfile = core.get_input('gemfile')
 gemfile_path = '/github-script-ruby/Gemfile'
 
-if gemfile
+unless gemfile.empty?
   status = 1
   tempfile = Tempfile.open do |f|
     f.write(gemfile)
