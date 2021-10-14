@@ -8,15 +8,30 @@ require_relative '../lib/github/actions/toolkit'
 
 core = GitHub::Actions::Toolkit::Core.new
 script = core.get_input('script')
-token = core.get_input('github-token')
+gemfile = core.get_input('gemfile')
+gemfile_path = '/github-script-ruby/Gemfile'
+
+if gemfile
+  status = 1
+  tempfile = Tempfile.open do |f|
+    f.write(gemfile)
+    o, e, s = Open3.capture3(ENV.to_hash, "bundle install --gemfile=#{f.path}")
+    core.error(e) unless e == ''
+    status = s.to_i
+    print o
+    f
+  end
+  exit 1 unless status.zero?
+  gemfile_path = tempfile.path
+end
+
 status = 1
-output = ''
 src = ERB.new(DATA.read).result(binding)
 Tempfile.create do |f|
   f.write(src)
   f.close
   File.read(f.path)
-  o, e, s = Open3.capture3(ENV.to_hash, "bundle exec --gemfile=/github-script-ruby/Gemfile ruby #{f.path}")
+  o, e, s = Open3.capture3(ENV.to_hash, "bundle exec --gemfile=#{gemfile_path} ruby #{f.path}")
   core.error(e) unless e == ''
   status = s.to_i
   print o
