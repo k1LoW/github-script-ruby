@@ -30,7 +30,7 @@ src = ERB.new(DATA.read).result(binding)
 Tempfile.create do |f|
   f.write(src)
   f.close
-  File.read(f.path)
+  puts File.read(gemfile_path)
   o, e, s = Open3.capture3(ENV.to_hash, "bundle exec --gemfile=#{gemfile_path} ruby #{f.path}")
   core.error(e) unless e == ''
   status = s.to_i
