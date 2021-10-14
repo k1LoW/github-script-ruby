@@ -13,16 +13,13 @@ gemfile_path = '/github-script-ruby/Gemfile'
 
 unless gemfile.empty?
   status = 1
-  tempfile = Tempfile.open do |f|
-    f.write(gemfile)
-    o, e, s = Open3.capture3(ENV.to_hash, "bundle install --gemfile=#{f.path}")
-    core.error(e) unless e == ''
-    status = s.to_i
-    print o
-    f
-  end
+  gemfile_path = '/tmp/Gemfile'
+  File.write('/tmp/Gemfile', gemfile)
+  o, e, s = Open3.capture3(ENV.to_hash, "bundle install --gemfile=#{gemfile_path}", chdir: '/tmp/')
+  core.error(e) unless e == ''
+  status = s.to_i
+  print o
   exit 1 unless status.zero?
-  gemfile_path = tempfile.path
 end
 
 status = 1
@@ -30,7 +27,6 @@ src = ERB.new(DATA.read).result(binding)
 Tempfile.create do |f|
   f.write(src)
   f.close
-  puts File.read(gemfile_path)
   o, e, s = Open3.capture3(ENV.to_hash, "bundle exec --gemfile=#{gemfile_path} ruby #{f.path}")
   core.error(e) unless e == ''
   status = s.to_i
