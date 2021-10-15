@@ -1,16 +1,19 @@
 coverage:
   acceptable: 50%
-  path: docs/coverage.svg
+  badge:
+    path: docs/coverage.svg
 codeToTestRatio:
   code:
     - '**/*.rb'
     - '!test/*.rb'
   test:
     - '**/*.rb'
-  path: docs/ratio.svg
+  badge:
+    path: docs/ratio.svg
 testExecutionTime:
   acceptable: 1min
-  path: docs/time.svg
+  badge:
+    path: docs/time.svg
 diff:
   path: .octocov/report.json
 push:
