@@ -72,7 +72,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-    - name: 'Post message to Slack #general channel'
+    - name: 'Post message to Slack channel'
       uses: ./
       with:
         script: |
