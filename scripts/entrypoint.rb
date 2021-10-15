@@ -8,13 +8,11 @@ require_relative '../lib/github/actions/toolkit'
 
 core = GitHub::Actions::Toolkit::Core.new
 script = core.get_input('script')
-gemfile = core.get_input('gemfile')
-gemfile_path = '/github-script-ruby/Gemfile'
-
-unless gemfile.empty?
-  status = 1
-  gemfile_path = '/tmp/Gemfile'
-end
+gemfile_path = if core.get_input('gemfile').empty?
+                 '/github-script-ruby/Gemfile'
+               else
+                 '/tmp/Gemfile'
+               end
 
 status = 1
 src = ERB.new(DATA.read).result(binding)
