@@ -1,423 +1,13 @@
 {
   "repository": "k1LoW/github-script-ruby",
   "ref": "refs/heads/main",
-  "commit": "62fb1fca46f0c4c99b7051116ebd72db6169992f",
+  "commit": "27676c5a758f421ea0f8e6bfeb255424deb8c26f",
   "coverage": {
     "type": "loc",
     "format": "SimpleCov",
-    "total": 68,
-    "covered": 61,
+    "total": 77,
+    "covered": 70,
     "files": [
-      {
-        "file": "/__w/github-script-ruby/github-script-ruby/lib/github/actions/toolkit/core.rb",
-        "total": 17,
-        "covered": 17,
-        "blocks": [
-          {
-            "type": "loc",
-            "start_line": 34,
-            "end_line": 34,
-            "count": 1
-          },
-          {
-            "type": "loc",
-            "start_line": 34,
-            "end_line": 34,
-            "count": 1
-          },
-          {
-            "type": "loc",
-            "start_line": 34,
-            "end_line": 34,
-            "count": 1
-          },
-          {
-            "type": "loc",
-            "start_line": 34,
-            "end_line": 34,
-            "count": 1
-          },
-          {
-            "type": "loc",
-            "start_line": 34,
-            "end_line": 34,
-            "count": 1
-          },
-          {
-            "type": "loc",
-            "start_line": 34,
-            "end_line": 34,
-            "count": 3
-          },
-          {
-            "type": "loc",
-            "start_line": 34,
-            "end_line": 34,
-            "count": 1
-          },
-          {
-            "type": "loc",
-            "start_line": 34,
-            "end_line": 34,
-            "count": 2
-          },
-          {
-            "type": "loc",
-            "start_line": 34,
-            "end_line": 34,
-            "count": 1
-          },
-          {
-            "type": "loc",
-            "start_line": 34,
-            "end_line": 34,
-            "count": 1
-          },
-          {
-            "type": "loc",
-            "start_line": 34,
-            "end_line": 34,
-            "count": 1
-          },
-          {
-            "type": "loc",
-            "start_line": 34,
-            "end_line": 34,
-            "count": 3
-          },
-          {
-            "type": "loc",
-            "start_line": 34,
-            "end_line": 34,
-            "count": 1
-          },
-          {
-            "type": "loc",
-            "start_line": 34,
-            "end_line": 34,
-            "count": 1
-          },
-          {
-            "type": "loc",
-            "start_line": 34,
-            "end_line": 34,
-            "count": 3
-          },
-          {
-            "type": "loc",
-            "start_line": 34,
-            "end_line": 34,
-            "count": 1
-          },
-          {
-            "type": "loc",
-            "start_line": 34,
-            "end_line": 34,
-            "count": 4
-          }
-        ]
-      },
-      {
-        "file": "/__w/github-script-ruby/github-script-ruby/lib/github/actions/toolkit/runner.rb",
-        "total": 49,
-        "covered": 42,
-        "blocks": [
-          {
-            "type": "loc",
-            "start_line": 75,
-            "end_line": 75,
-            "count": 1
-          },
-          {
-            "type": "loc",
-            "start_line": 75,
-            "end_line": 75,
-            "count": 1
-          },
-          {
-            "type": "loc",
-            "start_line": 75,
-            "end_line": 75,
-            "count": 1
-          },
-          {
-            "type": "loc",
-            "start_line": 75,
-            "end_line": 75,
-            "count": 1
-          },
-          {
-            "type": "loc",
-            "start_line": 75,
-            "end_line": 75,
-            "count": 1
-          },
-          {
-            "type": "loc",
-            "start_line": 75,
-            "end_line": 75,
-            "count": 1
-          },
-          {
-            "type": "loc",
-            "start_line": 75,
-            "end_line": 75,
-            "count": 1
-          },
-          {
-            "type": "loc",
-            "start_line": 75,
-            "end_line": 75,
-            "count": 1
-          },
-          {
-            "type": "loc",
-            "start_line": 75,
-            "end_line": 75,
-            "count": 1
-          },
-          {
-            "type": "loc",
-            "start_line": 75,
-            "end_line": 75,
-            "count": 1
-          },
-          {
-            "type": "loc",
-            "start_line": 75,
-            "end_line": 75,
-            "count": 1
-          },
-          {
-            "type": "loc",
-            "start_line": 75,
-            "end_line": 75,
-            "count": 1
-          },
-          {
-            "type": "loc",
-            "start_line": 75,
-            "end_line": 75,
-            "count": 1
-          },
-          {
-            "type": "loc",
-            "start_line": 75,
-            "end_line": 75,
-            "count": 1
-          },
-          {
-            "type": "loc",
-            "start_line": 75,
-            "end_line": 75,
-            "count": 1
-          },
-          {
-            "type": "loc",
-            "start_line": 75,
-            "end_line": 75,
-            "count": 1
-          },
-          {
-            "type": "loc",
-            "start_line": 75,
-            "end_line": 75,
-            "count": 1
-          },
-          {
-            "type": "loc",
-            "start_line": 75,
-            "end_line": 75,
-            "count": 1
-          },
-          {
-            "type": "loc",
-            "start_line": 75,
-            "end_line": 75,
-            "count": 1
-          },
-          {
-            "type": "loc",
-            "start_line": 75,
-            "end_line": 75,
-            "count": 1
-          },
-          {
-            "type": "loc",
-            "start_line": 75,
-            "end_line": 75,
-            "count": 1
-          },
-          {
-            "type": "loc",
-            "start_line": 75,
-            "end_line": 75,
-            "count": 1
-          },
-          {
-            "type": "loc",
-            "start_line": 75,
-            "end_line": 75,
-            "count": 1
-          },
-          {
-            "type": "loc",
-            "start_line": 75,
-            "end_line": 75,
-            "count": 1
-          },
-          {
-            "type": "loc",
-            "start_line": 75,
-            "end_line": 75,
-            "count": 1
-          },
-          {
-            "type": "loc",
-            "start_line": 75,
-            "end_line": 75,
-            "count": 1
-          },
-          {
-            "type": "loc",
-            "start_line": 75,
-            "end_line": 75,
-            "count": 1
-          },
-          {
-            "type": "loc",
-            "start_line": 75,
-            "end_line": 75,
-            "count": 1
-          },
-          {
-            "type": "loc",
-            "start_line": 75,
-            "end_line": 75,
-            "count": 1
-          },
-          {
-            "type": "loc",
-            "start_line": 75,
-            "end_line": 75,
-            "count": 1
-          },
-          {
-            "type": "loc",
-            "start_line": 75,
-            "end_line": 75,
-            "count": 1
-          },
-          {
-            "type": "loc",
-            "start_line": 75,
-            "end_line": 75,
-            "count": 1
-          },
-          {
-            "type": "loc",
-            "start_line": 75,
-            "end_line": 75,
-            "count": 1
-          },
-          {
-            "type": "loc",
-            "start_line": 75,
-            "end_line": 75,
-            "count": 1
-          },
-          {
-            "type": "loc",
-            "start_line": 75,
-            "end_line": 75,
-            "count": 1
-          },
-          {
-            "type": "loc",
-            "start_line": 75,
-            "end_line": 75,
-            "count": 0
-          },
-          {
-            "type": "loc",
-            "start_line": 75,
-            "end_line": 75,
-            "count": 0
-          },
-          {
-            "type": "loc",
-            "start_line": 75,
-            "end_line": 75,
-            "count": 1
-          },
-          {
-            "type": "loc",
-            "start_line": 75,
-            "end_line": 75,
-            "count": 1
-          },
-          {
-            "type": "loc",
-            "start_line": 75,
-            "end_line": 75,
-            "count": 1
-          },
-          {
-            "type": "loc",
-            "start_line": 75,
-            "end_line": 75,
-            "count": 0
-          },
-          {
-            "type": "loc",
-            "start_line": 75,
-            "end_line": 75,
-            "count": 0
-          },
-          {
-            "type": "loc",
-            "start_line": 75,
-            "end_line": 75,
-            "count": 0
-          },
-          {
-            "type": "loc",
-            "start_line": 75,
-            "end_line": 75,
-            "count": 0
-          },
-          {
-            "type": "loc",
-            "start_line": 75,
-            "end_line": 75,
-            "count": 0
-          },
-          {
-            "type": "loc",
-            "start_line": 75,
-            "end_line": 75,
-            "count": 1
-          },
-          {
-            "type": "loc",
-            "start_line": 75,
-            "end_line": 75,
-            "count": 1
-          },
-          {
-            "type": "loc",
-            "start_line": 75,
-            "end_line": 75,
-            "count": 3
-          },
-          {
-            "type": "loc",
-            "start_line": 75,
-            "end_line": 75,
-            "count": 1
-          }
-        ]
-      },
       {
         "file": "/__w/github-script-ruby/github-script-ruby/lib/github/actions/toolkit.rb",
         "total": 2,
@@ -431,8 +21,472 @@
           },
           {
             "type": "loc",
+            "start_line": 4,
+            "end_line": 4,
+            "count": 1
+          }
+        ]
+      },
+      {
+        "file": "/__w/github-script-ruby/github-script-ruby/lib/github/actions/toolkit/core.rb",
+        "total": 26,
+        "covered": 26,
+        "blocks": [
+          {
+            "type": "loc",
             "start_line": 3,
             "end_line": 3,
+            "count": 1
+          },
+          {
+            "type": "loc",
+            "start_line": 4,
+            "end_line": 4,
+            "count": 1
+          },
+          {
+            "type": "loc",
+            "start_line": 5,
+            "end_line": 5,
+            "count": 1
+          },
+          {
+            "type": "loc",
+            "start_line": 6,
+            "end_line": 6,
+            "count": 1
+          },
+          {
+            "type": "loc",
+            "start_line": 7,
+            "end_line": 7,
+            "count": 1
+          },
+          {
+            "type": "loc",
+            "start_line": 8,
+            "end_line": 8,
+            "count": 3
+          },
+          {
+            "type": "loc",
+            "start_line": 11,
+            "end_line": 11,
+            "count": 1
+          },
+          {
+            "type": "loc",
+            "start_line": 12,
+            "end_line": 12,
+            "count": 2
+          },
+          {
+            "type": "loc",
+            "start_line": 15,
+            "end_line": 15,
+            "count": 1
+          },
+          {
+            "type": "loc",
+            "start_line": 16,
+            "end_line": 16,
+            "count": 1
+          },
+          {
+            "type": "loc",
+            "start_line": 19,
+            "end_line": 19,
+            "count": 1
+          },
+          {
+            "type": "loc",
+            "start_line": 20,
+            "end_line": 20,
+            "count": 1
+          },
+          {
+            "type": "loc",
+            "start_line": 23,
+            "end_line": 23,
+            "count": 1
+          },
+          {
+            "type": "loc",
+            "start_line": 24,
+            "end_line": 24,
+            "count": 1
+          },
+          {
+            "type": "loc",
+            "start_line": 27,
+            "end_line": 27,
+            "count": 1
+          },
+          {
+            "type": "loc",
+            "start_line": 28,
+            "end_line": 28,
+            "count": 1
+          },
+          {
+            "type": "loc",
+            "start_line": 31,
+            "end_line": 31,
+            "count": 1
+          },
+          {
+            "type": "loc",
+            "start_line": 32,
+            "end_line": 32,
+            "count": 1
+          },
+          {
+            "type": "loc",
+            "start_line": 35,
+            "end_line": 35,
+            "count": 1
+          },
+          {
+            "type": "loc",
+            "start_line": 36,
+            "end_line": 36,
+            "count": 8
+          },
+          {
+            "type": "loc",
+            "start_line": 38,
+            "end_line": 38,
+            "count": 3
+          },
+          {
+            "type": "loc",
+            "start_line": 41,
+            "end_line": 41,
+            "count": 1
+          },
+          {
+            "type": "loc",
+            "start_line": 43,
+            "end_line": 43,
+            "count": 1
+          },
+          {
+            "type": "loc",
+            "start_line": 44,
+            "end_line": 44,
+            "count": 3
+          },
+          {
+            "type": "loc",
+            "start_line": 47,
+            "end_line": 47,
+            "count": 1
+          },
+          {
+            "type": "loc",
+            "start_line": 48,
+            "end_line": 48,
+            "count": 8
+          }
+        ]
+      },
+      {
+        "file": "/__w/github-script-ruby/github-script-ruby/lib/github/actions/toolkit/runner.rb",
+        "total": 49,
+        "covered": 42,
+        "blocks": [
+          {
+            "type": "loc",
+            "start_line": 3,
+            "end_line": 3,
+            "count": 1
+          },
+          {
+            "type": "loc",
+            "start_line": 4,
+            "end_line": 4,
+            "count": 1
+          },
+          {
+            "type": "loc",
+            "start_line": 6,
+            "end_line": 6,
+            "count": 1
+          },
+          {
+            "type": "loc",
+            "start_line": 7,
+            "end_line": 7,
+            "count": 1
+          },
+          {
+            "type": "loc",
+            "start_line": 8,
+            "end_line": 8,
+            "count": 1
+          },
+          {
+            "type": "loc",
+            "start_line": 9,
+            "end_line": 9,
+            "count": 1
+          },
+          {
+            "type": "loc",
+            "start_line": 10,
+            "end_line": 10,
+            "count": 1
+          },
+          {
+            "type": "loc",
+            "start_line": 11,
+            "end_line": 11,
+            "count": 1
+          },
+          {
+            "type": "loc",
+            "start_line": 12,
+            "end_line": 12,
+            "count": 1
+          },
+          {
+            "type": "loc",
+            "start_line": 13,
+            "end_line": 13,
+            "count": 1
+          },
+          {
+            "type": "loc",
+            "start_line": 16,
+            "end_line": 16,
+            "count": 1
+          },
+          {
+            "type": "loc",
+            "start_line": 18,
+            "end_line": 18,
+            "count": 1
+          },
+          {
+            "type": "loc",
+            "start_line": 19,
+            "end_line": 19,
+            "count": 1
+          },
+          {
+            "type": "loc",
+            "start_line": 20,
+            "end_line": 20,
+            "count": 1
+          },
+          {
+            "type": "loc",
+            "start_line": 21,
+            "end_line": 21,
+            "count": 1
+          },
+          {
+            "type": "loc",
+            "start_line": 23,
+            "end_line": 23,
+            "count": 1
+          },
+          {
+            "type": "loc",
+            "start_line": 26,
+            "end_line": 26,
+            "count": 1
+          },
+          {
+            "type": "loc",
+            "start_line": 27,
+            "end_line": 27,
+            "count": 1
+          },
+          {
+            "type": "loc",
+            "start_line": 29,
+            "end_line": 29,
+            "count": 1
+          },
+          {
+            "type": "loc",
+            "start_line": 30,
+            "end_line": 30,
+            "count": 1
+          },
+          {
+            "type": "loc",
+            "start_line": 31,
+            "end_line": 31,
+            "count": 1
+          },
+          {
+            "type": "loc",
+            "start_line": 32,
+            "end_line": 32,
+            "count": 1
+          },
+          {
+            "type": "loc",
+            "start_line": 33,
+            "end_line": 33,
+            "count": 1
+          },
+          {
+            "type": "loc",
+            "start_line": 34,
+            "end_line": 34,
+            "count": 1
+          },
+          {
+            "type": "loc",
+            "start_line": 35,
+            "end_line": 35,
+            "count": 1
+          },
+          {
+            "type": "loc",
+            "start_line": 36,
+            "end_line": 36,
+            "count": 1
+          },
+          {
+            "type": "loc",
+            "start_line": 37,
+            "end_line": 37,
+            "count": 1
+          },
+          {
+            "type": "loc",
+            "start_line": 38,
+            "end_line": 38,
+            "count": 1
+          },
+          {
+            "type": "loc",
+            "start_line": 39,
+            "end_line": 39,
+            "count": 1
+          },
+          {
+            "type": "loc",
+            "start_line": 40,
+            "end_line": 40,
+            "count": 1
+          },
+          {
+            "type": "loc",
+            "start_line": 41,
+            "end_line": 41,
+            "count": 1
+          },
+          {
+            "type": "loc",
+            "start_line": 42,
+            "end_line": 42,
+            "count": 1
+          },
+          {
+            "type": "loc",
+            "start_line": 45,
+            "end_line": 45,
+            "count": 1
+          },
+          {
+            "type": "loc",
+            "start_line": 46,
+            "end_line": 46,
+            "count": 1
+          },
+          {
+            "type": "loc",
+            "start_line": 47,
+            "end_line": 47,
+            "count": 1
+          },
+          {
+            "type": "loc",
+            "start_line": 48,
+            "end_line": 48,
+            "count": 0
+          },
+          {
+            "type": "loc",
+            "start_line": 49,
+            "end_line": 49,
+            "count": 0
+          },
+          {
+            "type": "loc",
+            "start_line": 53,
+            "end_line": 53,
+            "count": 1
+          },
+          {
+            "type": "loc",
+            "start_line": 54,
+            "end_line": 54,
+            "count": 1
+          },
+          {
+            "type": "loc",
+            "start_line": 55,
+            "end_line": 55,
+            "count": 1
+          },
+          {
+            "type": "loc",
+            "start_line": 56,
+            "end_line": 56,
+            "count": 0
+          },
+          {
+            "type": "loc",
+            "start_line": 57,
+            "end_line": 57,
+            "count": 0
+          },
+          {
+            "type": "loc",
+            "start_line": 58,
+            "end_line": 58,
+            "count": 0
+          },
+          {
+            "type": "loc",
+            "start_line": 59,
+            "end_line": 59,
+            "count": 0
+          },
+          {
+            "type": "loc",
+            "start_line": 60,
+            "end_line": 60,
+            "count": 0
+          },
+          {
+            "type": "loc",
+            "start_line": 65,
+            "end_line": 65,
+            "count": 1
+          },
+          {
+            "type": "loc",
+            "start_line": 68,
+            "end_line": 68,
+            "count": 1
+          },
+          {
+            "type": "loc",
+            "start_line": 69,
+            "end_line": 69,
+            "count": 3
+          },
+          {
+            "type": "loc",
+            "start_line": 72,
+            "end_line": 72,
             "count": 1
           }
         ]
@@ -440,9 +494,9 @@
     ]
   },
   "code_to_test_ratio": {
-    "code": 128,
-    "test": 218
+    "code": 141,
+    "test": 249
   },
-  "test_execution_time": 1000000000,
-  "timestamp": "2021-10-15T04:18:31.925021556Z"
+  "test_execution_time": 2000000000,
+  "timestamp": "2021-10-15T23:45:53.71332797Z"
 }
