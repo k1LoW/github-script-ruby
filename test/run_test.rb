@@ -8,6 +8,8 @@ $LOAD_PATH.unshift(lib_dir)
 
 require 'simplecov'
 require 'test/unit'
-SimpleCov.start
+SimpleCov.start do
+  add_filter '/test/'
+end
 
 exit Test::Unit::AutoRunner.run(true, test_dir)
