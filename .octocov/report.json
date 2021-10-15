@@ -1,141 +1,13 @@
 {
   "repository": "k1LoW/github-script-ruby",
   "ref": "refs/heads/main",
-  "commit": "81cd258126f2954dc3efbffea3b123e86ec4fcd6",
+  "commit": "3a3452d6afe4c96dd310b48f6358152f97fee14e",
   "coverage": {
     "type": "loc",
     "format": "SimpleCov",
     "total": 85,
     "covered": 45,
     "files": [
-      {
-        "file": "/__w/github-script-ruby/github-script-ruby/test/test_core.rb",
-        "total": 17,
-        "covered": 17,
-        "blocks": [
-          {
-            "type": "loc",
-            "start_line": 27,
-            "end_line": 27,
-            "count": 1
-          },
-          {
-            "type": "loc",
-            "start_line": 27,
-            "end_line": 27,
-            "count": 1
-          },
-          {
-            "type": "loc",
-            "start_line": 27,
-            "end_line": 27,
-            "count": 1
-          },
-          {
-            "type": "loc",
-            "start_line": 27,
-            "end_line": 27,
-            "count": 1
-          },
-          {
-            "type": "loc",
-            "start_line": 27,
-            "end_line": 27,
-            "count": 1
-          },
-          {
-            "type": "loc",
-            "start_line": 27,
-            "end_line": 27,
-            "count": 1
-          },
-          {
-            "type": "loc",
-            "start_line": 27,
-            "end_line": 27,
-            "count": 1
-          },
-          {
-            "type": "loc",
-            "start_line": 27,
-            "end_line": 27,
-            "count": 1
-          },
-          {
-            "type": "loc",
-            "start_line": 27,
-            "end_line": 27,
-            "count": 1
-          },
-          {
-            "type": "loc",
-            "start_line": 27,
-            "end_line": 27,
-            "count": 1
-          },
-          {
-            "type": "loc",
-            "start_line": 27,
-            "end_line": 27,
-            "count": 1
-          },
-          {
-            "type": "loc",
-            "start_line": 27,
-            "end_line": 27,
-            "count": 1
-          },
-          {
-            "type": "loc",
-            "start_line": 27,
-            "end_line": 27,
-            "count": 1
-          },
-          {
-            "type": "loc",
-            "start_line": 27,
-            "end_line": 27,
-            "count": 1
-          },
-          {
-            "type": "loc",
-            "start_line": 27,
-            "end_line": 27,
-            "count": 1
-          },
-          {
-            "type": "loc",
-            "start_line": 27,
-            "end_line": 27,
-            "count": 1
-          },
-          {
-            "type": "loc",
-            "start_line": 27,
-            "end_line": 27,
-            "count": 1
-          }
-        ]
-      },
-      {
-        "file": "/__w/github-script-ruby/github-script-ruby/lib/github/actions/toolkit.rb",
-        "total": 2,
-        "covered": 2,
-        "blocks": [
-          {
-            "type": "loc",
-            "start_line": 3,
-            "end_line": 3,
-            "count": 1
-          },
-          {
-            "type": "loc",
-            "start_line": 3,
-            "end_line": 3,
-            "count": 1
-          }
-        ]
-      },
       {
         "file": "/__w/github-script-ruby/github-script-ruby/lib/github/actions/toolkit/core.rb",
         "total": 17,
@@ -545,6 +417,134 @@
             "count": 1
           }
         ]
+      },
+      {
+        "file": "/__w/github-script-ruby/github-script-ruby/test/test_core.rb",
+        "total": 17,
+        "covered": 17,
+        "blocks": [
+          {
+            "type": "loc",
+            "start_line": 27,
+            "end_line": 27,
+            "count": 1
+          },
+          {
+            "type": "loc",
+            "start_line": 27,
+            "end_line": 27,
+            "count": 1
+          },
+          {
+            "type": "loc",
+            "start_line": 27,
+            "end_line": 27,
+            "count": 1
+          },
+          {
+            "type": "loc",
+            "start_line": 27,
+            "end_line": 27,
+            "count": 1
+          },
+          {
+            "type": "loc",
+            "start_line": 27,
+            "end_line": 27,
+            "count": 1
+          },
+          {
+            "type": "loc",
+            "start_line": 27,
+            "end_line": 27,
+            "count": 1
+          },
+          {
+            "type": "loc",
+            "start_line": 27,
+            "end_line": 27,
+            "count": 1
+          },
+          {
+            "type": "loc",
+            "start_line": 27,
+            "end_line": 27,
+            "count": 1
+          },
+          {
+            "type": "loc",
+            "start_line": 27,
+            "end_line": 27,
+            "count": 1
+          },
+          {
+            "type": "loc",
+            "start_line": 27,
+            "end_line": 27,
+            "count": 1
+          },
+          {
+            "type": "loc",
+            "start_line": 27,
+            "end_line": 27,
+            "count": 1
+          },
+          {
+            "type": "loc",
+            "start_line": 27,
+            "end_line": 27,
+            "count": 1
+          },
+          {
+            "type": "loc",
+            "start_line": 27,
+            "end_line": 27,
+            "count": 1
+          },
+          {
+            "type": "loc",
+            "start_line": 27,
+            "end_line": 27,
+            "count": 1
+          },
+          {
+            "type": "loc",
+            "start_line": 27,
+            "end_line": 27,
+            "count": 1
+          },
+          {
+            "type": "loc",
+            "start_line": 27,
+            "end_line": 27,
+            "count": 1
+          },
+          {
+            "type": "loc",
+            "start_line": 27,
+            "end_line": 27,
+            "count": 1
+          }
+        ]
+      },
+      {
+        "file": "/__w/github-script-ruby/github-script-ruby/lib/github/actions/toolkit.rb",
+        "total": 2,
+        "covered": 2,
+        "blocks": [
+          {
+            "type": "loc",
+            "start_line": 3,
+            "end_line": 3,
+            "count": 1
+          },
+          {
+            "type": "loc",
+            "start_line": 3,
+            "end_line": 3,
+            "count": 1
+          }
+        ]
       }
     ]
   },
@@ -552,6 +552,6 @@
     "code": 128,
     "test": 157
   },
-  "test_execution_time": 2000000000,
-  "timestamp": "2021-10-15T00:48:49.455919829Z"
+  "test_execution_time": 4000000000,
+  "timestamp": "2021-10-15T01:16:25.35325244Z"
 }
