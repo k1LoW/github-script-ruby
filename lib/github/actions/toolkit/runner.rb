@@ -14,12 +14,13 @@ module GitHub
         end
 
         def github
+          # In some cases, octokit is not installed, so run require in the method
           require 'octokit'
           Octokit.configure do |c|
             c.api_endpoint = ENV['GITHUB_API_URL'] || 'https://api.github.com'
             c.auto_paginate = true
           end
-          @github ||= Octokit::Client.new(:access_token => ENV['GITHUB_TOKEN'])
+          @github ||= Octokit::Client.new(access_token: ENV['GITHUB_TOKEN'])
         end
 
         def context

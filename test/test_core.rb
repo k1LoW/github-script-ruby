@@ -1,7 +1,8 @@
 # frozen_string_literal: true
 
 require 'test/unit'
-require_relative "../lib/github/actions/toolkit"
+require 'stringio'
+require_relative '../lib/github/actions/toolkit'
 
 class TestCore < Test::Unit::TestCase
   def test_get_input
@@ -18,6 +19,26 @@ class TestCore < Test::Unit::TestCase
     ENV['INPUT_INPUT-VALUE'] = want
     core = GitHub::Actions::Toolkit::Core.new
     assert_equal want, core.get_input('input-value')
+  end
+
+  def test_set_output
+    want = "::set-output name=prop::value\n"
+    core = GitHub::Actions::Toolkit::Core.new
+    $stdout = StringIO.new
+    core.set_output('prop', 'value')
+    got = $stdout.string
+    $stdout = STDOUT
+    assert_equal want, got
+  end
+
+  def test_error
+    want = "::error ::something error\n"
+    core = GitHub::Actions::Toolkit::Core.new
+    $stdout = StringIO.new
+    core.error('something error')
+    got = $stdout.string
+    $stdout = STDOUT
+    assert_equal want, got
   end
 
   def test_make_output
