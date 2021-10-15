@@ -9,15 +9,33 @@ module GitHub
         end
 
         def set_output(name, value)
-          puts make_output(name, value)
+          puts make_output('set-output', name, value)
+        end
+
+        def debug(message)
+          puts make_output('debug', '', message)
         end
 
         def error(message)
-          puts "::error ::#{escape_data(message)}"
+          puts make_output('error', '', message)
         end
 
-        def make_output(name, value)
-          "::set-output name=#{escape_property(name)}::#{escape_data(value)}"
+        def warning(message)
+          puts make_output('warning', '', message)
+        end
+
+        def notice(message)
+          puts make_output('notice', '', message)
+        end
+
+        def info(message)
+          puts message
+        end
+
+        def make_output(command, name, value)
+          return "::#{command} ::#{escape_data(value)}" if name == ''
+
+          "::#{command} name=#{escape_property(name)}::#{escape_data(value)}"
         end
 
         private

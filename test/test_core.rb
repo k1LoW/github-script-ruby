@@ -6,24 +6,24 @@ require_relative '../lib/github/actions/toolkit'
 
 class TestCore < Test::Unit::TestCase
   def test_get_input
+    core = GitHub::Actions::Toolkit::Core.new
     want = 'Hello, world!'
     ENV['INPUT_HELLO'] = want
-    core = GitHub::Actions::Toolkit::Core.new
     assert_equal want, core.get_input('hello')
   end
 
   def test_get_input_hyphen
     # Ruby can get environment variables with hyphenated names,
     # but it cannot get environment variables with hyphenated names via docker command
+    core = GitHub::Actions::Toolkit::Core.new
     want = 'Hello, world!'
     ENV['INPUT_INPUT-VALUE'] = want
-    core = GitHub::Actions::Toolkit::Core.new
     assert_equal want, core.get_input('input-value')
   end
 
   def test_set_output
-    want = "::set-output name=prop::value\n"
     core = GitHub::Actions::Toolkit::Core.new
+    want = "::set-output name=prop::value\n"
     $stdout = StringIO.new
     core.set_output('prop', 'value')
     got = $stdout.string
@@ -31,19 +31,39 @@ class TestCore < Test::Unit::TestCase
     assert_equal want, got
   end
 
-  def test_error
-    want = "::error ::something error\n"
+  def test_message
     core = GitHub::Actions::Toolkit::Core.new
+    %w[
+      debug
+      error
+      warning
+      notice
+    ].each do |c|
+      want = "::#{c} ::something #{c}\n"
+      $stdout = StringIO.new
+      core.send(c, "something #{c}")
+      got = $stdout.string
+      $stdout = STDOUT
+      assert_equal want, got
+    end
+  end
+
+  def test_info
+    core = GitHub::Actions::Toolkit::Core.new
+    want = "something info\n"
     $stdout = StringIO.new
-    core.error('something error')
+    core.info('something info')
     got = $stdout.string
     $stdout = STDOUT
     assert_equal want, got
   end
 
   def test_make_output
-    want = '::set-output name=prop::value'
     core = GitHub::Actions::Toolkit::Core.new
-    assert_equal want, core.make_output('prop', 'value')
+    want = '::set-output name=prop::value'
+    assert_equal want, core.make_output('set-output', 'prop', 'value')
+
+    want = '::error ::value'
+    assert_equal want, core.make_output('error', '', 'value')
   end
 end
