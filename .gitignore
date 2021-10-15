@@ -2,3 +2,4 @@ Dockerfile-e
 .ruby-version
 /vendor/
 /coverage/
+/.bundle/
