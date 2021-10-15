@@ -42,6 +42,32 @@ jobs:
             github.add_comment(repo, number, comment)
 ```
 
+### Use Gem packages
+
+It is possible to change the Gemfile to use.
+
+If you want to use octokit.rb, don't forget to add it.
+
+``` yaml
+- name: 'Post message to Slack #general channel'
+  uses: k1LoW/github-script-ruby@v0
+  with:
+    script: |
+      require 'slack-ruby-client'
+      Slack.configure do |config|
+        config.token = ENV['SLACK_API_TOKEN']
+      end
+      client = Slack::Web::Client.new
+      client.chat_postMessage(channel: '#general', text: 'Hello, Slack bot!')
+    gemfile: |
+      source 'https://rubygems.org'
+      gem 'octokit', '~> 4.0'
+      gem 'slack-ruby-client'
+  env:
+    SLACK_API_TOKEN: ${{ secrets.SLACK_API_TOKEN }}
+```
+
+
 ## References
 
 - [actions/github-script](https://github.com/actions/github-script): Write workflows scripting the GitHub API in JavaScript

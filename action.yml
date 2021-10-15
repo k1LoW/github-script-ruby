@@ -11,12 +11,12 @@ inputs:
     description: The GitHub token used to create an authenticated client
     default: ${{ github.token }}
     required: false
-  debug:
-    description: Whether to tell the GitHub client to log details of its requests
-    default: false
   result-encoding:
-    description: Either "string" or "json" (default "json")—how the result will be encoded
+    description: Either "string" or "json" (default "json") how the result will be encoded
     default: json
+  gemfile:
+    description: Gemfile code to use instead of the default Gemfile
+    required: false
 outputs:
   result:
     description: The return value of the script, stringified with `JSON.#generate`

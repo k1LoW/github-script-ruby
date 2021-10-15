@@ -19,4 +19,10 @@ class TestCore < Test::Unit::TestCase
     core = GitHub::Actions::Toolkit::Core.new
     assert_equal want, core.get_input('input-value')
   end
+
+  def test_make_output
+    want = '::set-output name=prop::value'
+    core = GitHub::Actions::Toolkit::Core.new
+    assert_equal want, core.make_output('prop', 'value')
+  end
 end

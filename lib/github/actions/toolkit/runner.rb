@@ -2,12 +2,6 @@
 
 require 'json'
 require 'ostruct'
-require 'octokit'
-
-Octokit.configure do |c|
-  c.api_endpoint = ENV['GITHUB_API_URL'] || 'https://api.github.com'
-  c.auto_paginate = true
-end
 
 module GitHub
   module Actions
@@ -20,6 +14,11 @@ module GitHub
         end
 
         def github
+          require 'octokit'
+          Octokit.configure do |c|
+            c.api_endpoint = ENV['GITHUB_API_URL'] || 'https://api.github.com'
+            c.auto_paginate = true
+          end
           @github ||= Octokit::Client.new(:access_token => ENV['GITHUB_TOKEN'])
         end
 
