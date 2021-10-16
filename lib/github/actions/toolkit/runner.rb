@@ -20,6 +20,18 @@ module GitHub
             c.api_endpoint = ENV['GITHUB_API_URL'] || 'https://api.github.com'
             c.auto_paginate = true
           end
+          if core.get_input('debug') != ''
+            require_relative 'logger'
+            stack = Faraday::RackBuilder.new do |builder|
+              builder.use Faraday::Request::Retry, exceptions: [Octokit::ServerError]
+              builder.use Octokit::Middleware::FollowRedirects
+              builder.use Octokit::Response::RaiseError
+              builder.use Octokit::Response::FeedParser
+              builder.response GitHub::Actions::Toolkit::Logger.new
+              builder.adapter Faraday.default_adapter
+            end
+            Octokit.middleware = stack
+          end
           @github ||= Octokit::Client.new(access_token: ENV['GITHUB_TOKEN'])
         end
 

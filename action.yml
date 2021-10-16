@@ -11,6 +11,9 @@ inputs:
     description: The GitHub token used to create an authenticated client
     default: ${{ github.token }}
     required: false
+  debug:
+    description: Whether to tell the GitHub client to log details of its requests
+    default: false
   result-encoding:
     description: Either "string" or "json" (default "json") how the result will be encoded
     default: json
