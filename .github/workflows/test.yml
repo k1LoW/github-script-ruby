@@ -14,3 +14,24 @@ jobs:
       - name: Run test
         run: bundle exec ruby test/run_test.rb
       - uses: k1LoW/octocov-action@v0
+  scan:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Run Trivy vulnerability scanner in repo mode
+        uses: aquasecurity/trivy-action@master
+        with:
+          scan-type: 'fs'
+          ignore-unfixed: true
+          format: 'table'
+      - name: Build
+        run: docker build -f docker/Dockerfile . -t ghcr.io/k1low/github-script-ruby-base:${{ github.sha }}
+      - name: Run Trivy vulnerability scanner
+        uses: aquasecurity/trivy-action@master
+        with:
+          image-ref: 'ghcr.io/k1low/github-script-ruby-base:${{ github.sha }}'
+          format: 'table'
+          exit-code: '1'
+          ignore-unfixed: true
+          vuln-type: 'os,library'
+          severity: 'CRITICAL,HIGH'
