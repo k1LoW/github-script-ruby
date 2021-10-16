@@ -19,6 +19,7 @@ jobs:
           if [[ "${{ steps.output-set.outputs.result }}" != "hello world" ]]; then
             exit 1
           fi
+
   test-context:
     name: 'Can get values from `context`'
     runs-on: ubuntu-latest
@@ -34,6 +35,7 @@ jobs:
         with:
           script: |
             exit 1 unless context.job == 'test-context'
+
   test-gems:
     name: 'Not affected by gems in other steps'
     runs-on: ubuntu-latest
@@ -52,6 +54,7 @@ jobs:
           script: |
             require 'rubygems'
             exit 1 if Gem::Specification.all_names.include? 'rubocop-1.22.1'
+
   test-gemfile:
     name: 'Can change Gemfile to use'
     runs-on: ubuntu-latest
@@ -92,3 +95,16 @@ jobs:
           gem 'slack-ruby-client'
       env:
         SLACK_API_TOKEN: ${{ secrets.SLACK_API_TOKEN }}
+
+  test-debug:
+    name: "Show log details of GitHub client's requests"
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: ./
+        with:
+          script: |
+            github.contributors('k1LoW/github-script-ruby', true).each { |c| puts c.login }
+            exit 1 unless github.contributors('k1LoW/github-script-ruby', true).one? { |c| c.login == 'k1LoW' }
+          result-encoding: string
+          debug: true
