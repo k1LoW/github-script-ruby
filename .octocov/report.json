@@ -1,13 +1,32 @@
 {
   "repository": "k1LoW/github-script-ruby",
   "ref": "refs/heads/main",
-  "commit": "0887361b30479531fd0dd7ff4c593457c7ed5faa",
+  "commit": "271eb6489ecd281956d4b21a043c86137cad92fa",
   "coverage": {
     "type": "loc",
     "format": "SimpleCov",
     "total": 86,
     "covered": 79,
     "files": [
+      {
+        "file": "/__w/github-script-ruby/github-script-ruby/lib/github/actions/toolkit.rb",
+        "total": 2,
+        "covered": 2,
+        "blocks": [
+          {
+            "type": "loc",
+            "start_line": 3,
+            "end_line": 3,
+            "count": 1
+          },
+          {
+            "type": "loc",
+            "start_line": 4,
+            "end_line": 4,
+            "count": 1
+          }
+        ]
+      },
       {
         "file": "/__w/github-script-ruby/github-script-ruby/lib/github/actions/toolkit/core.rb",
         "total": 26,
@@ -525,25 +544,6 @@
             "count": 1
           }
         ]
-      },
-      {
-        "file": "/__w/github-script-ruby/github-script-ruby/lib/github/actions/toolkit.rb",
-        "total": 2,
-        "covered": 2,
-        "blocks": [
-          {
-            "type": "loc",
-            "start_line": 3,
-            "end_line": 3,
-            "count": 1
-          },
-          {
-            "type": "loc",
-            "start_line": 4,
-            "end_line": 4,
-            "count": 1
-          }
-        ]
       }
     ]
   },
@@ -552,5 +552,5 @@
     "test": 270
   },
   "test_execution_time": 1000000000,
-  "timestamp": "2021-10-16T11:45:06.599633668Z"
+  "timestamp": "2021-10-16T14:56:33.654479748Z"
 }
