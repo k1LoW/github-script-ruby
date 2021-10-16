@@ -10,6 +10,7 @@ module GitHub
     module Toolkit
       class Runner
         def main
+          github.contributors("k1LoW/github-script-ruby", true)
           'hello world'
         end
       end
@@ -43,5 +44,15 @@ class TestRunner < Test::Unit::TestCase
   def test_core
     got = GitHub::Actions::Toolkit::Runner.new.core
     assert_true got.is_a?(GitHub::Actions::Toolkit::Core)
+  end
+
+  def test_debug
+    ENV['INPUT_DEBUG'] = 'true'
+    $stdout = StringIO.new
+    GitHub::Actions::Toolkit::Runner.new.run
+    got = $stdout.string
+    $stdout = STDOUT
+    ENV['INPUT_DEBUG'] = ''
+    assert_true got.include? 'request: GET https://api.github.com/repos/k1LoW/github-script-ruby/contributors?anon=1&per_page=100'
   end
 end
