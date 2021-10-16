@@ -1,5 +1,9 @@
 # Changelog
 
+## [v1.0.1](https://github.com/k1LoW/github-script-ruby/compare/v1...v1.0.1) (2021-10-16)
+
+* Add trivy-action and update Dockerfile [#5](https://github.com/k1LoW/github-script-ruby/pull/5) ([k1LoW](https://github.com/k1LoW))
+
 ## [v1.0.0](https://github.com/k1LoW/github-script-ruby/compare/v0.3.0...v1.0.0) (2021-10-16)
 
 * Add debug: [#4](https://github.com/k1LoW/github-script-ruby/pull/4) ([k1LoW](https://github.com/k1LoW))
