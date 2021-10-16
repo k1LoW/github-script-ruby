@@ -16,7 +16,7 @@ ref: [actions/github-script example](https://github.com/actions/github-script#pr
 
 ``` yaml
 - name: View context attributes
-  uses: k1LoW/github-script-ruby@v0
+  uses: k1LoW/github-script-ruby@v1
   with:
     script: pp context
 ```
@@ -33,7 +33,7 @@ jobs:
   comment:
     runs-on: ubuntu-latest
     steps:
-      - uses: k1LoW/github-script-ruby@v0
+      - uses: k1LoW/github-script-ruby@v1
         with:
           script: |
             repo = "#{context.repo.owner}/#{context.repo.repo}"
@@ -50,7 +50,7 @@ If you want to use octokit.rb, don't forget to add it.
 
 ``` yaml
 - name: 'Post message to Slack #general channel'
-  uses: k1LoW/github-script-ruby@v0
+  uses: k1LoW/github-script-ruby@v1
   with:
     script: |
       require 'slack-ruby-client'
