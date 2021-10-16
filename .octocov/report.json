@@ -1,7 +1,7 @@
 {
   "repository": "k1LoW/github-script-ruby",
   "ref": "refs/heads/main",
-  "commit": "56c047cfabd191cc1a607ec09fdd7abde6fcda67",
+  "commit": "9fb1cfd367d561329c6d3c1560226a91baa46883",
   "coverage": {
     "type": "loc",
     "format": "SimpleCov",
@@ -552,5 +552,5 @@
     "test": 270
   },
   "test_execution_time": 1000000000,
-  "timestamp": "2021-10-16T14:59:47.95647417Z"
+  "timestamp": "2021-10-16T15:04:04.447416153Z"
 }
