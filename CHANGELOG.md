@@ -1,5 +1,10 @@
 # Changelog
 
+## [v1.0.0](https://github.com/k1LoW/github-script-ruby/compare/v0.3.0...v1.0.0) (2021-10-16)
+
+* Add debug: [#4](https://github.com/k1LoW/github-script-ruby/pull/4) ([k1LoW](https://github.com/k1LoW))
+* Add more methods for message [#3](https://github.com/k1LoW/github-script-ruby/pull/3) ([k1LoW](https://github.com/k1LoW))
+
 ## [v0.3.0](https://github.com/k1LoW/github-script-ruby/compare/v0.2.3...v0.3.0) (2021-10-15)
 
 * Add gemfile: for changing the Gemfile to use. [#2](https://github.com/k1LoW/github-script-ruby/pull/2) ([k1LoW](https://github.com/k1LoW))
