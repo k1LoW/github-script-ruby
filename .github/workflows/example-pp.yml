@@ -7,7 +7,7 @@ jobs:
   pp-context:
     runs-on: ubuntu-latest
     steps:
-      - uses: k1LoW/github-script-ruby@v0
+      - uses: k1LoW/github-script-ruby@v1
         with:
           script: |
             pp context
