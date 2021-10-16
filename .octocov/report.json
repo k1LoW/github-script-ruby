@@ -1,12 +1,12 @@
 {
   "repository": "k1LoW/github-script-ruby",
   "ref": "refs/heads/main",
-  "commit": "27676c5a758f421ea0f8e6bfeb255424deb8c26f",
+  "commit": "e322749b44314afb50608aa2c8fdae3d6232a455",
   "coverage": {
     "type": "loc",
     "format": "SimpleCov",
-    "total": 77,
-    "covered": 70,
+    "total": 86,
+    "covered": 79,
     "files": [
       {
         "file": "/__w/github-script-ruby/github-script-ruby/lib/github/actions/toolkit.rb",
@@ -66,7 +66,7 @@
             "type": "loc",
             "start_line": 8,
             "end_line": 8,
-            "count": 3
+            "count": 7
           },
           {
             "type": "loc",
@@ -78,7 +78,7 @@
             "type": "loc",
             "start_line": 12,
             "end_line": 12,
-            "count": 2
+            "count": 3
           },
           {
             "type": "loc",
@@ -150,13 +150,13 @@
             "type": "loc",
             "start_line": 36,
             "end_line": 36,
-            "count": 8
+            "count": 9
           },
           {
             "type": "loc",
             "start_line": 38,
             "end_line": 38,
-            "count": 3
+            "count": 4
           },
           {
             "type": "loc",
@@ -174,7 +174,7 @@
             "type": "loc",
             "start_line": 44,
             "end_line": 44,
-            "count": 3
+            "count": 4
           },
           {
             "type": "loc",
@@ -186,14 +186,14 @@
             "type": "loc",
             "start_line": 48,
             "end_line": 48,
-            "count": 8
+            "count": 9
           }
         ]
       },
       {
         "file": "/__w/github-script-ruby/github-script-ruby/lib/github/actions/toolkit/runner.rb",
-        "total": 49,
-        "covered": 42,
+        "total": 58,
+        "covered": 51,
         "blocks": [
           {
             "type": "loc",
@@ -241,19 +241,19 @@
             "type": "loc",
             "start_line": 11,
             "end_line": 11,
-            "count": 1
+            "count": 2
           },
           {
             "type": "loc",
             "start_line": 12,
             "end_line": 12,
-            "count": 1
+            "count": 2
           },
           {
             "type": "loc",
             "start_line": 13,
             "end_line": 13,
-            "count": 1
+            "count": 2
           },
           {
             "type": "loc",
@@ -265,30 +265,42 @@
             "type": "loc",
             "start_line": 18,
             "end_line": 18,
-            "count": 1
+            "count": 3
           },
           {
             "type": "loc",
             "start_line": 19,
             "end_line": 19,
-            "count": 1
+            "count": 3
           },
           {
             "type": "loc",
             "start_line": 20,
             "end_line": 20,
-            "count": 1
+            "count": 3
           },
           {
             "type": "loc",
             "start_line": 21,
             "end_line": 21,
-            "count": 1
+            "count": 3
           },
           {
             "type": "loc",
             "start_line": 23,
             "end_line": 23,
+            "count": 3
+          },
+          {
+            "type": "loc",
+            "start_line": 24,
+            "end_line": 24,
+            "count": 1
+          },
+          {
+            "type": "loc",
+            "start_line": 25,
+            "end_line": 25,
             "count": 1
           },
           {
@@ -305,6 +317,12 @@
           },
           {
             "type": "loc",
+            "start_line": 28,
+            "end_line": 28,
+            "count": 1
+          },
+          {
+            "type": "loc",
             "start_line": 29,
             "end_line": 29,
             "count": 1
@@ -317,39 +335,15 @@
           },
           {
             "type": "loc",
-            "start_line": 31,
-            "end_line": 31,
-            "count": 1
-          },
-          {
-            "type": "loc",
             "start_line": 32,
             "end_line": 32,
             "count": 1
           },
           {
             "type": "loc",
-            "start_line": 33,
-            "end_line": 33,
-            "count": 1
-          },
-          {
-            "type": "loc",
             "start_line": 34,
             "end_line": 34,
-            "count": 1
-          },
-          {
-            "type": "loc",
-            "start_line": 35,
-            "end_line": 35,
-            "count": 1
-          },
-          {
-            "type": "loc",
-            "start_line": 36,
-            "end_line": 36,
-            "count": 1
+            "count": 3
           },
           {
             "type": "loc",
@@ -361,12 +355,6 @@
             "type": "loc",
             "start_line": 38,
             "end_line": 38,
-            "count": 1
-          },
-          {
-            "type": "loc",
-            "start_line": 39,
-            "end_line": 39,
             "count": 1
           },
           {
@@ -385,6 +373,18 @@
             "type": "loc",
             "start_line": 42,
             "end_line": 42,
+            "count": 1
+          },
+          {
+            "type": "loc",
+            "start_line": 43,
+            "end_line": 43,
+            "count": 1
+          },
+          {
+            "type": "loc",
+            "start_line": 44,
+            "end_line": 44,
             "count": 1
           },
           {
@@ -409,13 +409,31 @@
             "type": "loc",
             "start_line": 48,
             "end_line": 48,
-            "count": 0
+            "count": 1
           },
           {
             "type": "loc",
             "start_line": 49,
             "end_line": 49,
-            "count": 0
+            "count": 1
+          },
+          {
+            "type": "loc",
+            "start_line": 50,
+            "end_line": 50,
+            "count": 1
+          },
+          {
+            "type": "loc",
+            "start_line": 51,
+            "end_line": 51,
+            "count": 1
+          },
+          {
+            "type": "loc",
+            "start_line": 52,
+            "end_line": 52,
+            "count": 1
           },
           {
             "type": "loc",
@@ -425,33 +443,21 @@
           },
           {
             "type": "loc",
-            "start_line": 54,
-            "end_line": 54,
-            "count": 1
-          },
-          {
-            "type": "loc",
-            "start_line": 55,
-            "end_line": 55,
-            "count": 1
-          },
-          {
-            "type": "loc",
             "start_line": 56,
             "end_line": 56,
-            "count": 0
+            "count": 1
           },
           {
             "type": "loc",
             "start_line": 57,
             "end_line": 57,
-            "count": 0
+            "count": 1
           },
           {
             "type": "loc",
             "start_line": 58,
             "end_line": 58,
-            "count": 0
+            "count": 1
           },
           {
             "type": "loc",
@@ -467,26 +473,74 @@
           },
           {
             "type": "loc",
+            "start_line": 64,
+            "end_line": 64,
+            "count": 1
+          },
+          {
+            "type": "loc",
             "start_line": 65,
             "end_line": 65,
             "count": 1
           },
           {
             "type": "loc",
+            "start_line": 66,
+            "end_line": 66,
+            "count": 1
+          },
+          {
+            "type": "loc",
+            "start_line": 67,
+            "end_line": 67,
+            "count": 0
+          },
+          {
+            "type": "loc",
             "start_line": 68,
             "end_line": 68,
-            "count": 1
+            "count": 0
           },
           {
             "type": "loc",
             "start_line": 69,
             "end_line": 69,
-            "count": 3
+            "count": 0
           },
           {
             "type": "loc",
-            "start_line": 72,
-            "end_line": 72,
+            "start_line": 70,
+            "end_line": 70,
+            "count": 0
+          },
+          {
+            "type": "loc",
+            "start_line": 71,
+            "end_line": 71,
+            "count": 0
+          },
+          {
+            "type": "loc",
+            "start_line": 76,
+            "end_line": 76,
+            "count": 1
+          },
+          {
+            "type": "loc",
+            "start_line": 79,
+            "end_line": 79,
+            "count": 1
+          },
+          {
+            "type": "loc",
+            "start_line": 80,
+            "end_line": 80,
+            "count": 8
+          },
+          {
+            "type": "loc",
+            "start_line": 83,
+            "end_line": 83,
             "count": 1
           }
         ]
@@ -494,9 +548,9 @@
     ]
   },
   "code_to_test_ratio": {
-    "code": 141,
-    "test": 249
+    "code": 152,
+    "test": 270
   },
-  "test_execution_time": 2000000000,
-  "timestamp": "2021-10-15T23:45:53.71332797Z"
+  "test_execution_time": 1000000000,
+  "timestamp": "2021-10-16T08:40:52.113238619Z"
 }
