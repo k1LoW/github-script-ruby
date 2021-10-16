@@ -4,7 +4,9 @@ LABEL org.opencontainers.image.url="https://github.com/k1LoW/github-script-ruby"
 LABEL org.opencontainers.image.source="https://github.com/k1LoW/github-script-ruby/blob/main/baseimage/Dockerfile"
 
 RUN apt-get update \
-    && apt-get install -y $(apt list --upgradable | grep security | cut -f 1 -d "/" | xargs) \
+    && apt-get install -y unattended-upgrades \
+    && unattended-upgrade \
+    && apt-get purge -y unattended-upgrades \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
