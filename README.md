@@ -77,7 +77,8 @@ If you want to use octokit.rb, don't forget to add it.
       require 'mysql2'
       client = Mysql2::Client.new(:host => "localhost", :username => "root")
       client.query('SELECT * FROM users').each do |row|
-      puts row['name']
+        puts row['name']
+      end
     pre-command: |
       apt-get update
       apt-get install -y libmysqld-dev
