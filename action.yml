@@ -20,6 +20,9 @@ inputs:
   gemfile:
     description: Gemfile code to use instead of the default Gemfile
     required: false
+  pre-command:
+    description: The command to execute in the environment of the action, before run the script.
+    required: false
 outputs:
   result:
     description: The return value of the script, stringified with `JSON.#generate`
@@ -31,3 +34,4 @@ runs:
     # Ruby can get environment variables with hyphenated names,
     # but it cannot get environment variables with hyphenated names via docker command
     INPUT_RESULT_ENCODING: ${{ inputs.result-encoding }}
+    INPUT_PRE_COMMAND: ${{ inputs.pre-command }}
