@@ -108,3 +108,23 @@ jobs:
             exit 1 unless github.contributors('k1LoW/github-script-ruby', true).one? { |c| c.login == 'k1LoW' }
           result-encoding: string
           debug: true
+
+  test-pre-command:
+    name: "Execute pre-command:, before run script:"
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: ./
+        with:
+          pre-command: |
+            echo 'hello'
+
+            echo 'world'
+
+            apt-get update
+            apt-get install -y curl
+            export TBLS_VERSION=1.52.0
+            curl -L https://git.io/dpkg-i-from-url | bash -s -- https://github.com/k1LoW/tbls/releases/download/v$TBLS_VERSION/tbls_$TBLS_VERSION-1_amd64.deb
+            tbls version
+          script: |
+            puts `tbls version`

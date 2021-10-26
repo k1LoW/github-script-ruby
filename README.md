@@ -67,6 +67,26 @@ If you want to use octokit.rb, don't forget to add it.
     SLACK_API_TOKEN: ${{ secrets.SLACK_API_TOKEN }}
 ```
 
+### Pre-install packages for building native extentions.
+
+``` yaml
+- name: 'List users'
+  uses: k1LoW/github-script-ruby@v1
+  with:
+    script: |
+      require 'mysql2'
+
+      client = Mysql2::Client.new(:host => "localhost", :username => "root")
+      client.query('SELECT * FROM users').each do |row|
+        puts row['name']
+      end
+    pre-command: |
+      apt-get update
+      apt-get install -y libmysqld-dev
+    gemfile: |
+      source 'https://rubygems.org'
+      gem 'mysql2'
+```
 
 ## References
 
