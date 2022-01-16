@@ -1,5 +1,9 @@
 # Changelog
 
+## [v2.0.0](https://github.com/k1LoW/github-script-ruby/compare/v1.1.0...v2.0.0) (2022-01-16)
+
+* Support `ruby-version:` using ruby/ruby-builder [#7](https://github.com/k1LoW/github-script-ruby/pull/7) ([k1LoW](https://github.com/k1LoW))
+
 ## [v1.1.0](https://github.com/k1LoW/github-script-ruby/compare/v1.0.1...v1.1.0) (2021-10-26)
 
 * Add pre-command: [#6](https://github.com/k1LoW/github-script-ruby/pull/6) ([k1LoW](https://github.com/k1LoW))
