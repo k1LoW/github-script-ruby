@@ -70,6 +70,19 @@ jobs:
             source 'https://rubygems.org'
             gem 'rubocop', '1.22.1'
 
+  test-gemfile-path:
+    name: 'Can change Gemfile to use (gemfile-path)'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: ./
+        with:
+          script: |
+            require 'rubygems'
+            exit 1 unless Gem::Specification.all_names.include? 'rubocop-1.22.1'
+            exit 1 unless Gem::Specification.all_names.none? { |gem| gem.include? 'octokit' }
+          gemfile-path: test/Gemfile.test
+
   test-ruby-version:
     name: 'Can change Ruby version to use'
     runs-on: ubuntu-latest

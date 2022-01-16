@@ -8,10 +8,12 @@ require_relative '../lib/github/actions/toolkit'
 
 core = GitHub::Actions::Toolkit::Core.new
 script = core.get_input('script')
-gemfile_path = if core.get_input('gemfile').empty?
-                 '/github-script-ruby/Gemfile'
-               else
+gemfile_path = if !core.get_input('gemfile').empty?
                  '/tmp/Gemfile'
+               elsif !core.get_input('gemfile-file').empty?
+                 core.get_input('gemfile-file')
+               else
+                 '/github-script-ruby/Gemfile'
                end
 
 status = 1
