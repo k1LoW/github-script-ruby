@@ -70,6 +70,18 @@ jobs:
             source 'https://rubygems.org'
             gem 'rubocop', '1.22.1'
 
+  test-ruby-version:
+    name: 'Can change Ruby version to use'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: ./
+        with:
+          script: |
+            exit 1 unless RUBY_VERSION == '2.6.9'
+            exit 1 unless Gem::Specification.all_names.any? { |gem| gem.include? 'octokit' }
+          ruby-version: 2.6.9
+
   test-slack-tmp:
     name: 'Post message to Slack #general channel'
     runs-on: ubuntu-latest
