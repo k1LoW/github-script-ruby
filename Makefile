@@ -11,7 +11,7 @@ prerelease:
 	git add CHANGELOG.md Dockerfile
 	git commit -m'Bump up version number'
 	git tag ${VER}
-	git tag -f v1
+	git tag -f v2
 	docker build -f docker/Dockerfile . -t ghcr.io/k1low/github-script-ruby-base:${VER}
 	docker build -f docker/Dockerfile . -t ghcr.io/k1low/github-script-ruby-base:latest
 
