@@ -1,10 +1,10 @@
-FROM rubylang/ruby:2.7
+FROM rubylang/ruby:3.1-focal
 
 LABEL org.opencontainers.image.url="https://github.com/k1LoW/github-script-ruby"
-LABEL org.opencontainers.image.source="https://github.com/k1LoW/github-script-ruby/blob/main/baseimage/Dockerfile"
+LABEL org.opencontainers.image.source="https://github.com/k1LoW/github-script-ruby/blob/main/docker/Dockerfile"
 
 RUN apt-get update \
-    && apt-get install -y unattended-upgrades \
+    && apt-get install -y curl unattended-upgrades \
     && unattended-upgrade \
     && apt-get purge -y unattended-upgrades \
     && apt-get clean \
