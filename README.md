@@ -33,7 +33,7 @@ jobs:
   comment:
     runs-on: ubuntu-latest
     steps:
-      - uses: k1LoW/github-script-ruby@v1
+      - uses: k1LoW/github-script-ruby@v2
         with:
           script: |
             repo = "#{context.repo.owner}/#{context.repo.repo}"
@@ -50,7 +50,7 @@ If you want to use octokit.rb, don't forget to add it.
 
 ``` yaml
 - name: 'Post message to Slack #general channel'
-  uses: k1LoW/github-script-ruby@v1
+  uses: k1LoW/github-script-ruby@v2
   with:
     script: |
       require 'slack-ruby-client'
@@ -71,7 +71,7 @@ If you want to use octokit.rb, don't forget to add it.
 
 ``` yaml
 - name: 'List users'
-  uses: k1LoW/github-script-ruby@v1
+  uses: k1LoW/github-script-ruby@v2
   with:
     script: |
       require 'mysql2'
