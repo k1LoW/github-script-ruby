@@ -87,6 +87,20 @@ If you want to use octokit.rb, don't forget to add it.
       gem 'mysql2'
 ```
 
+### Change Ruby version of use
+
+``` yaml
+- name: 'List users'
+  uses: k1LoW/github-script-ruby@v2
+  with:
+    script: |
+      repo = "#{context.repo.owner}/#{context.repo.repo}"
+      number = context.issue.number
+      comment = "Hello using Ruby v#{RUBY_VERSION}"
+      github.add_comment(repo, number, comment)
+    ruby-version: 2.7.5
+```
+
 ## References
 
 - [actions/github-script](https://github.com/actions/github-script): Write workflows scripting the GitHub API in JavaScript
