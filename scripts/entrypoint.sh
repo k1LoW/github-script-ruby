@@ -11,7 +11,7 @@ if [ -n "$RUBY_VERSION" ]; then
     curl -sL https://github.com/ruby/ruby-builder/releases/download/toolcache/ruby-$RUBY_VERSION-ubuntu-20.04.tar.gz --output /tmp/ruby.tar.gz
     tar -xz -C /opt/hostedtoolcache/Ruby/$RUBY_VERSION -f /tmp/ruby.tar.gz
     export PATH=/opt/hostedtoolcache/Ruby/$RUBY_VERSION/x64/bin:$PATH
-    rm -f /github/workspace/Gemfile.lock
+    rm -f /github/workspace/Gemfile.lock /github-script-ruby/Gemfile.lock
     bundle install --gemfile=/github-script-ruby/Gemfile
 fi
 

@@ -78,8 +78,8 @@ jobs:
       - uses: ./
         with:
           script: |
-            exit 1 unless RUBY_VERSION != '2.6.9'
-            exit 1 unless Gem::Specification.all_names.include? 'octokit'
+            exit 1 unless RUBY_VERSION == '2.6.9'
+            exit 1 unless Gem::Specification.all_names.any? { |gem| gem.include? 'octokit' }
           ruby-version: 2.6.9
 
   test-slack-tmp:
