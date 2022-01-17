@@ -1,0 +1,25 @@
+name: Ruby version
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+jobs:
+  ruby-version:
+    name: "test that script: works with Ruby ${{ matrix.ruby_version }}"
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        ruby_version: [2.1.9, 2.2.10, 2.3.8, 2.4.10, 2.5.9, 2.6.9, 2.7.5, 3.0.3, 3.1.0]
+    steps:
+      - uses: actions/checkout@v2
+      - uses: ./
+        with:
+          script: |
+            github.contributors('k1LoW/github-script-ruby', true).each { |c| puts c.login }
+            exit 1 unless github.contributors('k1LoW/github-script-ruby', true).one? { |c| c.login == 'k1LoW' }
+          ruby-version: ${{ matrix.ruby_version }}
+          debug: true

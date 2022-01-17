@@ -2,12 +2,14 @@ name: Example (Print the available attributes of context)
 
 on:
   push:
+    branches:
+      - main
 
 jobs:
   pp-context:
     runs-on: ubuntu-latest
     steps:
-      - uses: k1LoW/github-script-ruby@v1
+      - uses: k1LoW/github-script-ruby@v2
         with:
           script: |
             pp context
