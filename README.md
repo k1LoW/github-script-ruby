@@ -101,6 +101,17 @@ If you want to use octokit.rb, don't forget to add it.
     ruby-version: 2.7.5
 ```
 
+### Execute Ruby script file
+
+``` yaml
+- name: 'Capistrano deploy'
+  uses: k1LoW/github-script-ruby@v2
+  with:
+    gemfile-path: path/to/Gemfile
+    command: bundle exec cap deploy --gemfile=path/to/Gemfile
+    ruby-version: 2.7.5
+```
+
 ## References
 
 - [actions/github-script](https://github.com/actions/github-script): Write workflows scripting the GitHub API in JavaScript
