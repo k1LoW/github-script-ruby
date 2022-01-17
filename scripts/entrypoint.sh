@@ -23,4 +23,9 @@ elif [ -n "$INPUT_GEMFILE_PATH" ]; then
     bundle install --gemfile=$INPUT_GEMFILE_PATH
 fi
 
-bundle exec --gemfile=/github-script-ruby/Gemfile ruby /github-script-ruby/scripts/entrypoint.rb
+if [ -n "$INPUT_COMMAND" ]; then
+    eval "$INPUT_COMMAND"
+else
+    bundle exec --gemfile=/github-script-ruby/Gemfile ruby /github-script-ruby/scripts/entrypoint.rb
+fi
+

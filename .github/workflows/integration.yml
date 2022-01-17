@@ -154,3 +154,16 @@ jobs:
             tbls version
           script: |
             puts `tbls version`
+
+  test-command:
+    name: "Execute command:, instead of running script:"
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: ./
+        with:
+          command: |
+            ruby -v
+          script: |
+            exit 1 # This will not be executed
+          ruby-version: 2.6.9
