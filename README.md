@@ -90,7 +90,7 @@ If you want to use octokit.rb, don't forget to add it.
 ### Change Ruby version of use
 
 ``` yaml
-- name: 'List users'
+- name: 'Hello Ruby version'
   uses: k1LoW/github-script-ruby@v2
   with:
     script: |
