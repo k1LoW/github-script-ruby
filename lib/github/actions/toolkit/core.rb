@@ -5,7 +5,7 @@ module GitHub
     module Toolkit
       class Core
         def get_input(name)
-          ENV["INPUT_#{name.gsub(/ /, '_').upcase}"] || ''
+          ENV["INPUT_#{name.gsub(/ /, '_').upcase}"] || ENV["INPUT_#{name.gsub(/[\s-]/, '_').upcase}"] || ''
         end
 
         def set_output(name, value)
