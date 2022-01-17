@@ -1,5 +1,11 @@
 # Changelog
 
+## [v2.1.0](https://github.com/k1LoW/github-script-ruby/compare/v2.0.0...v2.1.0) (2022-01-17)
+
+* Add tests that script: works with each version of Ruby [#10](https://github.com/k1LoW/github-script-ruby/pull/10) ([k1LoW](https://github.com/k1LoW))
+* Support `command:` [#9](https://github.com/k1LoW/github-script-ruby/pull/9) ([k1LoW](https://github.com/k1LoW))
+* Support `gemfile-path:` for specifying the path of Gemfile [#8](https://github.com/k1LoW/github-script-ruby/pull/8) ([k1LoW](https://github.com/k1LoW))
+
 ## [v2.0.1](https://github.com/k1LoW/github-script-ruby/compare/v2.0.0...v2.0.1) (2022-01-17)
 
 * Add tests that script: works with each version of Ruby [#10](https://github.com/k1LoW/github-script-ruby/pull/10) ([k1LoW](https://github.com/k1LoW))
