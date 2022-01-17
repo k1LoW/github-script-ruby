@@ -6,7 +6,7 @@ branding:
 inputs:
   script:
     description: The script to run
-    required: true
+    required: false
   github-token:
     description: The GitHub token used to create an authenticated client
     default: ${{ github.token }}
@@ -25,6 +25,9 @@ inputs:
     required: false
   pre-command:
     description: The command to execute in the environment of the action, before run the script.
+    required: false
+  command:
+    description: The command to execute in the environment of the action, instead of running the script.
     required: false
   ruby-version:
     description: Version of Ruby to use.
