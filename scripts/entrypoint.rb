@@ -16,8 +16,6 @@ gemfile_path = if !core.get_input('gemfile').empty?
                  '/github-script-ruby/Gemfile'
                end
 
-puts gemfile_path
-
 status = 1
 src = ERB.new(DATA.read).result(binding)
 Tempfile.create do |f|
