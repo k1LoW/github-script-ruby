@@ -12,7 +12,14 @@ if [ -n "$INPUT_RUBY_VERSION" ]; then
     tar -xz -C /opt/hostedtoolcache/Ruby/$INPUT_RUBY_VERSION -f /tmp/ruby.tar.gz
     export PATH=/opt/hostedtoolcache/Ruby/$INPUT_RUBY_VERSION/x64/bin:$PATH
     rm -f /github/workspace/Gemfile.lock /github-script-ruby/Gemfile.lock
+    if ruby -e "exit 1 unless Gem::Version.create(RUBY_VERSION) < Gem::Version.create('2.6')"; then
+        gem install bundler --no-document
+        gem update --system --no-document
+    fi
     bundle install --gemfile=/github-script-ruby/Gemfile
+    ruby -v
+    gem -v
+    bundle -v
 fi
 
 if [ -n "$INPUT_GEMFILE" ]; then
@@ -28,4 +35,3 @@ if [ -n "$INPUT_COMMAND" ]; then
 else
     bundle exec --gemfile=/github-script-ruby/Gemfile ruby /github-script-ruby/scripts/entrypoint.rb
 fi
-
