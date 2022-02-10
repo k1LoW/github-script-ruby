@@ -15,12 +15,13 @@ testExecutionTime:
   badge:
     path: docs/time.svg
 diff:
-  path: .octocov/report.json
+  datastores:
+    - artifact://${GITHUB_REPOSITORY}
 push:
-  enable: true
-  if: env.GITHUB_REF == 'refs/heads/main'
+  if: is_default_branch
 comment:
-  enable: true
+  if: is_pull_request
 report:
-  if: env.GITHUB_REF == 'refs/heads/main'
-  path: .octocov/report.json
+  if: is_default_branch
+  datastores:
+    - artifact://${GITHUB_REPOSITORY}
