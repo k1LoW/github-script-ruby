@@ -18,6 +18,7 @@ prerelease:
 	docker build -f docker/Dockerfile . -t ghcr.io/k1low/github-script-ruby-base:${VER}
 	docker build -f docker/Dockerfile . -t ghcr.io/k1low/github-script-ruby-base:latest
 
+# make release VER=$(git semv now)
 release:
 	docker push ghcr.io/k1low/github-script-ruby-base:${VER}
 	docker push ghcr.io/k1low/github-script-ruby-base:latest
