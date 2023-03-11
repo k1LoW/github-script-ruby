@@ -1,5 +1,9 @@
 # Changelog
 
+## [v2.2.0](https://github.com/k1LoW/github-script-ruby/compare/v2.1.0...v2.2.0) (2023-03-11)
+
+* Fix Ruby version change feature. [#11](https://github.com/k1LoW/github-script-ruby/pull/11) ([k1LoW](https://github.com/k1LoW))
+
 ## [v2.1.0](https://github.com/k1LoW/github-script-ruby/compare/v2.0.0...v2.1.0) (2022-01-17)
 
 * Add tests that script: works with each version of Ruby [#10](https://github.com/k1LoW/github-script-ruby/pull/10) ([k1LoW](https://github.com/k1LoW))
