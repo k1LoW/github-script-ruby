@@ -1,3 +1,6 @@
+test:
+	bundle exec ruby test/run_test.rb
+
 build-base:
 	docker build -f docker/Dockerfile . -t ghcr.io/k1low/github-script-ruby-base:latest
 
@@ -19,3 +22,5 @@ release:
 	docker push ghcr.io/k1low/github-script-ruby-base:${VER}
 	docker push ghcr.io/k1low/github-script-ruby-base:latest
 	git push origin main --tag -f
+
+.PHONY: default test
