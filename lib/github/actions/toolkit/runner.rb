@@ -22,7 +22,7 @@ module GitHub
           end
           if core.get_input('debug') != ''
             stack = Faraday::RackBuilder.new do |builder|
-              builder.use Faraday::Retry, exceptions: [Octokit::ServerError]
+              builder.use Faraday::Retry::Middleware, exceptions: Faraday::Request::Retry::DEFAULT_EXCEPTIONS + [Octokit::ServerError]
               builder.use Octokit::Middleware::FollowRedirects
               builder.use Octokit::Response::RaiseError
               builder.use Octokit::Response::FeedParser
