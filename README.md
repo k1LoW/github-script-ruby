@@ -1,4 +1,4 @@
-# github-script-ruby [![Test](https://github.com/k1LoW/github-script-ruby/actions/workflows/test.yml/badge.svg)](https://github.com/k1LoW/github-script-ruby/actions/workflows/test.yml) ![coverage](docs/coverage.svg) ![ratio](docs/ratio.svg) ![time](docs/time.svg)
+# github-script-ruby [![Test](https://github.com/k1LoW/github-script-ruby/actions/workflows/test.yml/badge.svg)](https://github.com/k1LoW/github-script-ruby/actions/workflows/test.yml)
 
 This action makes it easy to write Ruby scripts in the workflow, just like [actions/github-script](https://github.com/actions/github-script).
 
@@ -16,7 +16,7 @@ ref: [actions/github-script example](https://github.com/actions/github-script#pr
 
 ``` yaml
 - name: View context attributes
-  uses: k1LoW/github-script-ruby@v1
+  uses: k1LoW/github-script-ruby@v2
   with:
     script: pp context
 ```

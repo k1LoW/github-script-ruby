@@ -1,5 +1,5 @@
 name: GitHub Script for Ruby
-description: Run simple ruby scripts using the GitHub client
+description: Run simple Ruby scripts using the GitHub client
 branding:
   color: red
   icon: code
