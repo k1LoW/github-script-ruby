@@ -1,4 +1,4 @@
-FROM rubylang/ruby:3.1-focal
+FROM rubylang/ruby:3.1-dev-focal
 
 LABEL org.opencontainers.image.url="https://github.com/k1LoW/github-script-ruby"
 LABEL org.opencontainers.image.source="https://github.com/k1LoW/github-script-ruby/blob/main/docker/Dockerfile"

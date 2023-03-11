@@ -22,15 +22,23 @@ module GitHub
           end
           if core.get_input('debug') != ''
             stack = Faraday::RackBuilder.new do |builder|
-              builder.use Faraday::Request::Retry, exceptions: [Octokit::ServerError]
+              if defined?(Faraday::Request::Retry)
+                retry_exceptions = Faraday::Request::Retry::DEFAULT_EXCEPTIONS + [Octokit::ServerError]
+                builder.use Faraday::Request::Retry, exceptions: retry_exceptions
+              elsif defined?(Faraday::Retry::Middleware)
+                retry_exceptions = Faraday::Retry::Middleware::DEFAULT_EXCEPTIONS + [Octokit::ServerError]
+                builder.use Faraday::Retry::Middleware, exceptions: retry_exceptions
+              end
               builder.use Octokit::Middleware::FollowRedirects
               builder.use Octokit::Response::RaiseError
               builder.use Octokit::Response::FeedParser
               builder.response :logger
               builder.adapter Faraday.default_adapter
             end
-            Octokit.middleware = stack
+          else
+            stack = Faraday::RackBuilder.new
           end
+          Octokit.middleware = stack
           @github ||= Octokit::Client.new(access_token: ENV['GITHUB_TOKEN'])
         end
 
