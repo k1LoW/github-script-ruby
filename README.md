@@ -1,4 +1,4 @@
-# github-script-ruby [![Test](https://github.com/k1LoW/github-script-ruby/actions/workflows/test.yml/badge.svg)](https://github.com/k1LoW/github-script-ruby/actions/workflows/test.yml)
+# github-script-ruby [![Test](https://github.com/k1LoW/github-script-ruby/actions/workflows/test.yml/badge.svg)](https://github.com/k1LoW/github-script-ruby/actions/workflows/test.yml) ![Coverage](https://raw.githubusercontent.com/k1LoW/octocovs/main/badges/k1LoW/github-script-ruby/coverage.svg) ![Code to Test Ratio](https://raw.githubusercontent.com/k1LoW/octocovs/main/badges/k1LoW/github-script-ruby/ratio.svg) ![Test Execution Time](https://raw.githubusercontent.com/k1LoW/octocovs/main/badges/k1LoW/github-script-ruby/time.svg)
 
 This action makes it easy to write Ruby scripts in the workflow, just like [actions/github-script](https://github.com/actions/github-script).
 
@@ -118,4 +118,3 @@ The `ruby-version:` feature is realized using the prebuilt Ruby releases are gen
 
 - [actions/github-script](https://github.com/actions/github-script): Write workflows scripting the GitHub API in JavaScript
 - [ruby/setup-ruby](https://github.com/ruby/setup-ruby): An action to download a prebuilt Ruby and add it to the PATH in 5 seconds
-

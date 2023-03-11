@@ -1,24 +1,20 @@
 coverage:
   acceptable: 50%
-  badge:
-    path: docs/coverage.svg
 codeToTestRatio:
   code:
     - '**/*.rb'
     - '!test/*.rb'
   test:
     - '**/*.rb'
-  badge:
-    path: docs/ratio.svg
 testExecutionTime:
   acceptable: 1min
-  badge:
-    path: docs/time.svg
 diff:
   datastores:
     - artifact://${GITHUB_REPOSITORY}
 push:
   if: is_default_branch
+summary:
+  if: true
 comment:
   if: is_pull_request
 report:
