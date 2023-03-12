@@ -1,5 +1,8 @@
 # Changelog
 
+## [v2.3.5](https://github.com/k1LoW/github-script-ruby/compare/v2.2.0...v2.3.5) - 2023-03-12
+- Add tagpr for release by @k1LoW in https://github.com/k1LoW/github-script-ruby/pull/13
+
 ## [v2.2.0](https://github.com/k1LoW/github-script-ruby/compare/v2.1.0...v2.2.0) (2023-03-11)
 
 * Fix Ruby version change feature. [#11](https://github.com/k1LoW/github-script-ruby/pull/11) ([k1LoW](https://github.com/k1LoW))
@@ -51,4 +54,3 @@
 
 
 ## [v0.1.0](https://github.com/k1LoW/github-script-ruby/compare/73e586948d3c...v0.1.0) (2021-10-12)
-
