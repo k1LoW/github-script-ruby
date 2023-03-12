@@ -17,6 +17,20 @@ jobs:
       - name: Run test
         run: bundle exec ruby test/run_test.rb
       - uses: k1LoW/octocov-action@v0
+  integration:
+    needs: test
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: ./.github/workflows/integration.yml
+  ruby-version:
+    needs: test
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: ./.github/workflows/ruby-version.yml
   scan:
     runs-on: ubuntu-latest
     steps:

@@ -24,7 +24,20 @@ jobs:
         with:
           major_version_tag_only: true
           tag: ${{ steps.run-tagpr.outputs.tag }}
-
+  integration:
+    needs: tagpr
+    if: needs.tagpr.outputs.tagpr-tag == ''
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: ./.github/workflows/integration.yml
+  ruby-version:
+    needs: tagpr
+    if: needs.tagpr.outputs.tagpr-tag == ''
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: ./.github/workflows/ruby-version.yml
   dockerimage:
     needs: tagpr
     if: needs.tagpr.outputs.tagpr-tag != ''
