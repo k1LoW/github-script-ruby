@@ -11,7 +11,7 @@ jobs:
     name: 'The return value of `script` can be retrieved'
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - id: output-set
         uses: ./
         with:
@@ -27,7 +27,7 @@ jobs:
     name: 'Can get values from `context`'
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - id: context-payload
         uses: ./
         with:
@@ -43,7 +43,7 @@ jobs:
     name: 'Not affected by gems in other steps'
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - uses: ruby/setup-ruby@v1
         with:
           ruby-version: 2.7
@@ -62,7 +62,7 @@ jobs:
     name: 'Can change Gemfile to use'
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - uses: ./
         with:
           script: |
@@ -77,7 +77,7 @@ jobs:
     name: 'Can change Gemfile to use (gemfile-path)'
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - uses: ./
         with:
           script: |
@@ -91,7 +91,7 @@ jobs:
     name: 'Can change Ruby version to use'
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - uses: ./
         with:
           script: |
@@ -103,7 +103,7 @@ jobs:
     name: 'Post message to Slack #general channel'
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3
     - name: 'Post message to Slack channel'
       uses: ./
       with:
@@ -129,7 +129,7 @@ jobs:
     name: "Show log details of GitHub client's requests"
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - uses: ./
         with:
           script: |
@@ -142,7 +142,7 @@ jobs:
     name: "Execute pre-command:, before run script:"
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - uses: ./
         with:
           pre-command: |
@@ -162,7 +162,7 @@ jobs:
     name: "Execute command:, instead of running script:"
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - uses: ./
         with:
           command: |
