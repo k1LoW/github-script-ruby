@@ -19,6 +19,12 @@ jobs:
         name: Run tagpr
         uses: Songmu/tagpr@v1
 
+      - uses: haya14busa/action-update-semver@v1
+        if: "steps.run-tagpr.outputs.tag != ''"
+        with:
+          major_version_tag_only: true
+          tag: ${{ steps.run-tagpr.outputs.tag }}
+
   dockerimage:
     needs: tagpr
     if: needs.tagpr.outputs.tagpr-tag != ''
