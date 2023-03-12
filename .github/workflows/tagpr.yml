@@ -65,10 +65,10 @@ jobs:
           platforms: linux/amd64,linux/arm64
           push: true
           tags: |
-            docker push ghcr.io/k1low/github-script-ruby-base:${{ steps.latest_version.outputs.version }}
-            docker push ghcr.io/k1low/github-script-ruby-base:latest
+            ghcr.io/k1low/github-script-ruby-base:${{ steps.latest_version.outputs.version }}
+            ghcr.io/k1low/github-script-ruby-base:latest
           labels: |
             org.opencontainers.image.name=runn
             org.opencontainers.image.revision=${{ github.sha }}
             org.opencontainers.image.version=${{ steps.latest_version.outputs.version }}
-            org.opencontainers.image.source=https://github.com/k1LoW/runn
+            org.opencontainers.image.source=https://github.com/k1LoW/github-script-ruby
