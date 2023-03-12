@@ -32,4 +32,4 @@
 [tagpr]
 	vPrefix = true
 	releaseBranch = main
-	versionFile = docker/Dockerfile
+	versionFile = Dockerfile
