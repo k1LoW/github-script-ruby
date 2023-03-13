@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 require 'test/unit'
-require 'stringio'
+require 'tempfile'
 require_relative '../lib/github/actions/toolkit'
 
 class TestCore < Test::Unit::TestCase
@@ -22,13 +22,15 @@ class TestCore < Test::Unit::TestCase
   end
 
   def test_set_output
+    t = Tempfile.open
+    ENV['GITHUB_OUTPUT'] = t.path
     core = GitHub::Actions::Toolkit::Core.new
     want = "::set-output name=prop::value\n"
-    $stdout = StringIO.new
     core.set_output('prop', 'value')
-    got = $stdout.string
-    $stdout = STDOUT
+    got = t.read
     assert_equal want, got
+    ENV['GITHUB_OUTPUT'] = nil
+    t.unlink
   end
 
   def test_message
@@ -39,23 +41,27 @@ class TestCore < Test::Unit::TestCase
       warning
       notice
     ].each do |c|
+      t = Tempfile.open
+      ENV['GITHUB_OUTPUT'] = t.path
       want = "::#{c} ::something #{c}\n"
-      $stdout = StringIO.new
       core.send(c, "something #{c}")
-      got = $stdout.string
-      $stdout = STDOUT
+      got = t.read
       assert_equal want, got
+      ENV['GITHUB_OUTPUT'] = nil
+      t.unlink
     end
   end
 
   def test_info
+    t = Tempfile.open
+    ENV['GITHUB_OUTPUT'] = t.path
     core = GitHub::Actions::Toolkit::Core.new
     want = "something info\n"
-    $stdout = StringIO.new
     core.info('something info')
-    got = $stdout.string
-    $stdout = STDOUT
+    got = t.read
     assert_equal want, got
+    ENV['GITHUB_OUTPUT'] = nil
+    t.unlink
   end
 
   def test_make_output
