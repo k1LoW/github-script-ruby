@@ -24,7 +24,7 @@ class TestRunner < Test::Unit::TestCase
     t = Tempfile.open
     ENV['GITHUB_OUTPUT'] = t.path
     ENV['INPUT_RESULT_ENCODING'] = 'string'
-    want = "::set-output name=result::hello world\n"
+    want = "result=hello world\n"
     GitHub::Actions::Toolkit::Runner.new.run
     got = t.read
     assert_equal want, got
