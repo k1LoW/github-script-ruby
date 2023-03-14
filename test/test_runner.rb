@@ -3,6 +3,7 @@
 require 'test/unit'
 require 'stringio'
 require 'octokit'
+require 'tempfile'
 require_relative '../lib/github/actions/toolkit'
 
 module GitHub
@@ -20,13 +21,15 @@ end
 
 class TestRunner < Test::Unit::TestCase
   def test_run
+    t = Tempfile.open
+    ENV['GITHUB_OUTPUT'] = t.path
     ENV['INPUT_RESULT_ENCODING'] = 'string'
-    want = "::set-output name=result::hello world\n"
-    $stdout = StringIO.new
+    want = "result=hello world\n"
     GitHub::Actions::Toolkit::Runner.new.run
-    got = $stdout.string
-    $stdout = STDOUT
+    got = t.read
     assert_equal want, got
+    ENV['GITHUB_OUTPUT'] = nil
+    t.unlink
   end
 
   def test_github
