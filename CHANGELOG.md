@@ -1,5 +1,8 @@
 # Changelog
 
+## [v2.3.1](https://github.com/k1LoW/github-script-ruby/compare/v2.3.0...v2.3.1) - 2024-06-21
+- chore(deps): bump the dependencies group with 6 updates by @dependabot in https://github.com/k1LoW/github-script-ruby/pull/20
+
 ## [v2.3.0](https://github.com/k1LoW/github-script-ruby/compare/v2.2.1...v2.3.0) - 2023-03-14
 - Use $GITHUB_OUTPUT instead of STDOUT by @k1LoW in https://github.com/k1LoW/github-script-ruby/pull/18
 
