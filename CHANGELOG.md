@@ -1,5 +1,9 @@
 # Changelog
 
+## [v2.3.1](https://github.com/k1LoW/github-script-ruby/compare/v2.3.0...v2.3.1) - 2026-02-10
+- chore(deps): bump the dependencies group with 6 updates by @dependabot[bot] in https://github.com/k1LoW/github-script-ruby/pull/20
+- fix: fix CI failures: update Ruby/Ubuntu versions and fix JSON parsing by @k1LoW in https://github.com/k1LoW/github-script-ruby/pull/23
+
 ## [v2.3.0](https://github.com/k1LoW/github-script-ruby/compare/v2.2.1...v2.3.0) - 2023-03-14
 - Use $GITHUB_OUTPUT instead of STDOUT by @k1LoW in https://github.com/k1LoW/github-script-ruby/pull/18
 
