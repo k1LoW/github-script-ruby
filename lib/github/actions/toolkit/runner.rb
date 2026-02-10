@@ -46,7 +46,7 @@ module GitHub
           return @context unless @context.nil?
 
           @context = OpenStruct.new
-          @context.payload = JSON::Parser.new(File.read(ENV['GITHUB_EVENT_PATH']), object_class: OpenStruct).parse if ENV['GITHUB_EVENT_PATH']
+          @context.payload = deep_open_struct(JSON.parse(File.read(ENV['GITHUB_EVENT_PATH']))) if ENV['GITHUB_EVENT_PATH']
           @context.event_name = ENV['GITHUB_EVENT_NAME'] || ''
           @context.sha = ENV['GITHUB_SHA'] || ''
           @context.ref = ENV['GITHUB_REF'] || ''
@@ -89,6 +89,19 @@ module GitHub
         end
 
         def main; end
+
+        private
+
+        def deep_open_struct(obj)
+          case obj
+          when Hash
+            OpenStruct.new(obj.transform_values { |v| deep_open_struct(v) })
+          when Array
+            obj.map { |v| deep_open_struct(v) }
+          else
+            obj
+          end
+        end
       end
     end
   end

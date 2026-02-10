@@ -95,9 +95,9 @@ jobs:
       - uses: ./
         with:
           script: |
-            exit 1 unless RUBY_VERSION == '2.6.9'
+            exit 1 unless RUBY_VERSION == '3.1.7'
             exit 1 unless Gem::Specification.all_names.any? { |gem| gem.include? 'octokit' }
-          ruby-version: 2.6.9
+          ruby-version: 3.1.7
 
   test-slack-tmp:
     name: 'Post message to Slack #general channel'
@@ -169,4 +169,4 @@ jobs:
             ruby -v
           script: |
             exit 1 # This will not be executed
-          ruby-version: 2.6.9
+          ruby-version: 3.1.7

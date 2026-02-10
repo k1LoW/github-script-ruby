@@ -40,8 +40,11 @@ class TestRunner < Test::Unit::TestCase
   def test_context
     want = 'test_context'
     ENV['GITHUB_ACTION'] = want
+    original_event_path = ENV.delete('GITHUB_EVENT_PATH')
     got = GitHub::Actions::Toolkit::Runner.new.context.action
     assert_equal want, got
+  ensure
+    ENV['GITHUB_EVENT_PATH'] = original_event_path if original_event_path
   end
 
   def test_core
