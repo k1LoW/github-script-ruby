@@ -18,6 +18,7 @@ COPY scripts/entrypoint.rb /github-script-ruby/scripts/entrypoint.rb
 COPY scripts/entrypoint.sh /github-script-ruby/scripts/entrypoint.sh
 
 RUN gem install bundler \
-    && gem install uri -v '~> 0.13.3'
+    && gem install uri -v '~> 0.13.3' \
+    && rm -f /usr/local/lib/ruby/gems/*/specifications/default/uri-*.gemspec
 
 RUN bundle install --gemfile=/github-script-ruby/Gemfile
