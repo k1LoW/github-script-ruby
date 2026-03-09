@@ -18,6 +18,8 @@ COPY scripts/entrypoint.rb /github-script-ruby/scripts/entrypoint.rb
 COPY scripts/entrypoint.sh /github-script-ruby/scripts/entrypoint.sh
 
 RUN gem install bundler \
+    # CVE-2025-61594: Update the uri default gem and remove the old gemspec
+    # because `gem install` leaves it in specifications/default/
     && gem install uri -v '~> 0.13.3' \
     && rm -f /usr/local/lib/ruby/gems/*/specifications/default/uri-*.gemspec
 
