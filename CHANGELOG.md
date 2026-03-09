@@ -1,5 +1,9 @@
 # Changelog
 
+## [v2.5.0](https://github.com/k1LoW/github-script-ruby/compare/v2.4.0...v2.5.0) - 2026-03-09
+- fix: update uri gem to resolve CVE-2025-61594 by @k1LoW in https://github.com/k1LoW/github-script-ruby/pull/26
+- chore(deps): bump the dependencies group with 4 updates by @dependabot[bot] in https://github.com/k1LoW/github-script-ruby/pull/25
+
 ## [v2.4.0](https://github.com/k1LoW/github-script-ruby/compare/v2.3.1...v2.4.0) - 2026-02-10
 - chore(deps-dev): bump faraday from 2.7.4 to 2.14.1 by @dependabot[bot] in https://github.com/k1LoW/github-script-ruby/pull/22
 - chore(deps): bump actions/checkout from 4 to 5 in the dependencies group by @dependabot[bot] in https://github.com/k1LoW/github-script-ruby/pull/21
