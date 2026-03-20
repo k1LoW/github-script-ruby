@@ -133,3 +133,22 @@ jobs:
             -t ghcr.io/k1low/github-script-ruby-base:${VERSION} \
             -t ghcr.io/k1low/github-script-ruby-base:latest \
             $(printf 'ghcr.io/k1low/github-script-ruby-base@sha256:%s ' *)
+
+  rerun-tests:
+    needs: [tagpr, merge-manifests]
+    if: needs.tagpr.outputs.tagpr-tag != ''
+    runs-on: ubuntu-latest
+    permissions:
+      actions: write
+    env:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    steps:
+      - name: Rerun failed test workflows
+        run: |
+          for workflow in test.yml ruby-version.yml; do
+            run_id=$(gh run list --workflow="${workflow}" --limit 1 --json databaseId --jq '.[0].databaseId' -R "$GITHUB_REPOSITORY")
+            if [ -n "$run_id" ]; then
+              echo "Rerunning ${workflow} (run ${run_id})"
+              gh run rerun "$run_id" --failed -R "$GITHUB_REPOSITORY" || true
+            fi
+          done
