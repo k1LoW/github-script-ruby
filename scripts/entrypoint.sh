@@ -8,7 +8,10 @@ fi
 
 if [ -n "$INPUT_RUBY_VERSION" ]; then
     mkdir -p /opt/hostedtoolcache/Ruby/$INPUT_RUBY_VERSION
-    curl -sL https://github.com/ruby/ruby-builder/releases/download/toolcache/ruby-$INPUT_RUBY_VERSION-ubuntu-22.04.tar.gz --output /tmp/ruby.tar.gz
+    # Try new release tag format first, then fall back to legacy toolcache tag
+    if ! curl -sfL "https://github.com/ruby/ruby-builder/releases/download/ruby-$INPUT_RUBY_VERSION/ruby-$INPUT_RUBY_VERSION-ubuntu-22.04-x64.tar.gz" --output /tmp/ruby.tar.gz; then
+        curl -sfL "https://github.com/ruby/ruby-builder/releases/download/toolcache/ruby-$INPUT_RUBY_VERSION-ubuntu-22.04.tar.gz" --output /tmp/ruby.tar.gz
+    fi
     tar -xz -C /opt/hostedtoolcache/Ruby/$INPUT_RUBY_VERSION -f /tmp/ruby.tar.gz
     export PATH=/opt/hostedtoolcache/Ruby/$INPUT_RUBY_VERSION/x64/bin:$PATH
     rm -f /github/workspace/Gemfile.lock /github-script-ruby/Gemfile.lock
