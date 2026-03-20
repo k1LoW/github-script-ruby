@@ -1,5 +1,9 @@
 # Changelog
 
+## [v2.6.0](https://github.com/k1LoW/github-script-ruby/compare/v2.5.1...v2.6.0) - 2026-03-20
+- feat(ci): add Ruby 4.0.2 to version matrix by @k1LoW in https://github.com/k1LoW/github-script-ruby/pull/32
+- chore(deps-dev): bump json from 2.18.1 to 2.19.2 by @dependabot[bot] in https://github.com/k1LoW/github-script-ruby/pull/29
+
 ## [v2.5.1](https://github.com/k1LoW/github-script-ruby/compare/v2.5.0...v2.5.1) - 2026-03-20
 - fix(ci): use native arm64 runner instead of QEMU emulation by @k1LoW in https://github.com/k1LoW/github-script-ruby/pull/30
 
