@@ -1,5 +1,8 @@
 # Changelog
 
+## [v2.5.1](https://github.com/k1LoW/github-script-ruby/compare/v2.5.0...v2.5.1) - 2026-03-20
+- fix(ci): use native arm64 runner instead of QEMU emulation by @k1LoW in https://github.com/k1LoW/github-script-ruby/pull/30
+
 ## [v2.5.0](https://github.com/k1LoW/github-script-ruby/compare/v2.4.0...v2.5.0) - 2026-03-09
 - fix: update uri gem to resolve CVE-2025-61594 by @k1LoW in https://github.com/k1LoW/github-script-ruby/pull/26
 - chore(deps): bump the dependencies group with 4 updates by @dependabot[bot] in https://github.com/k1LoW/github-script-ruby/pull/25
