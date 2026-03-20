@@ -146,9 +146,13 @@ jobs:
       - name: Rerun failed test workflows
         run: |
           for workflow in test.yml ruby-version.yml; do
-            run_id=$(gh run list --workflow="${workflow}" --limit 1 --json databaseId --jq '.[0].databaseId' -R "$GITHUB_REPOSITORY")
-            if [ -n "$run_id" ]; then
+            run=$(gh run list --workflow="${workflow}" --limit 1 --json databaseId,conclusion --jq '.[0]' -R "$GITHUB_REPOSITORY")
+            conclusion=$(echo "$run" | jq -r '.conclusion')
+            run_id=$(echo "$run" | jq -r '.databaseId')
+            if [ "$conclusion" = "failure" ]; then
               echo "Rerunning ${workflow} (run ${run_id})"
               gh run rerun "$run_id" --failed -R "$GITHUB_REPOSITORY" || true
+            else
+              echo "Skipping ${workflow} (run ${run_id}, conclusion: ${conclusion})"
             fi
           done
