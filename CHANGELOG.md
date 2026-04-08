@@ -1,5 +1,8 @@
 # Changelog
 
+## [v2.6.1](https://github.com/k1LoW/github-script-ruby/compare/v2.6.0...v2.6.1) - 2026-04-08
+- chore(deps-dev): bump addressable from 2.8.1 to 2.9.0 in the bundler group across 1 directory by @dependabot[bot] in https://github.com/k1LoW/github-script-ruby/pull/36
+
 ## [v2.6.0](https://github.com/k1LoW/github-script-ruby/compare/v2.5.1...v2.6.0) - 2026-03-20
 - feat(ci): add Ruby 4.0.2 to version matrix by @k1LoW in https://github.com/k1LoW/github-script-ruby/pull/32
 - chore(deps-dev): bump json from 2.18.1 to 2.19.2 by @dependabot[bot] in https://github.com/k1LoW/github-script-ruby/pull/29
