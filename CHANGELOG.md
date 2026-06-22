@@ -1,5 +1,11 @@
 # Changelog
 
+## [v2.6.2](https://github.com/k1LoW/github-script-ruby/compare/v2.6.1...v2.6.2) - 2026-06-22
+
+- fix: update erb and net-imap default gems to resolve Trivy CVEs by @k1LoW in https://github.com/k1LoW/github-script-ruby/pull/39
+- chore(deps): bump actions/checkout from 6 to 7 in the dependencies group across 1 directory by @dependabot[bot] in https://github.com/k1LoW/github-script-ruby/pull/38
+- chore(deps-dev): bump faraday from 2.14.1 to 2.14.3 in the bundler group across 1 directory by @dependabot[bot] in https://github.com/k1LoW/github-script-ruby/pull/37
+
 ## [v2.6.1](https://github.com/k1LoW/github-script-ruby/compare/v2.6.0...v2.6.1) - 2026-04-08
 - chore(deps-dev): bump addressable from 2.8.1 to 2.9.0 in the bundler group across 1 directory by @dependabot[bot] in https://github.com/k1LoW/github-script-ruby/pull/36
 
