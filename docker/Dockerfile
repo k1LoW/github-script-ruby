@@ -26,8 +26,11 @@ RUN gem install bundler \
     && gem install erb -v '~> 4.0.3.1' \
     && rm -f /usr/local/lib/ruby/gems/*/specifications/default/erb-*.gemspec \
     # CVE-2026-42245 / CVE-2026-42246 / CVE-2026-42257 / CVE-2026-42258:
-    # Update the net-imap default gem and remove the old gemspec.
+    # net-imap is a bundled gem (not a default gem) in Ruby 3.3, so the
+    # pre-installed copy lives in specifications/ rather than
+    # specifications/default/. `gem install` does not replace it, so
+    # uninstall the vulnerable version explicitly.
     && gem install net-imap -v '~> 0.4.24' \
-    && rm -f /usr/local/lib/ruby/gems/*/specifications/default/net-imap-*.gemspec
+    && gem uninstall net-imap --version 0.4.21 --force --executables
 
 RUN bundle install --gemfile=/github-script-ruby/Gemfile
